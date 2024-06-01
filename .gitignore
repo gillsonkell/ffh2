@@ -1,0 +1,13 @@
+*
+!.gitignore
+!*/
+
+!Assets/
+
+!Assets/python/
+!Assets/python/**
+
+!Assets/xml/
+!Assets/xml/**
+
+!Assets/CvGameCoreDLL.dll
