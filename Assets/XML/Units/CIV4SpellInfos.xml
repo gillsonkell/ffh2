@@ -5365,7 +5365,7 @@
             <Description>Establish Estate Grounds</Description>
             <Civilopedia>NONE</Civilopedia>
             <Strategy>NONE</Strategy>
-            <Help>[ICON_BULLET]+2 Food, +20% Gold</Help>
+            <Help>[ICON_BULLET]+2 Food, +20% Gold, -10% Maintenance</Help>
             <PromotionPrereq1>PROMOTION_ESTATES2</PromotionPrereq1>
             <PromotionPrereq2>NONE</PromotionPrereq2>
             <UnitPrereq>NONE</UnitPrereq>
@@ -5440,7 +5440,7 @@
             <Description>Open the Banquest Hall</Description>
             <Civilopedia>NONE</Civilopedia>
             <Strategy>NONE</Strategy>
-            <Help>[ICON_BULLET]+20% Food, +25% Gold, Allows 1 Artist</Help>
+            <Help>[ICON_BULLET]+20% Food, +25% Gold, Allows 1 Artist, -20% Maintenance</Help>
             <PromotionPrereq1>PROMOTION_ESTATES3</PromotionPrereq1>
             <PromotionPrereq2>NONE</PromotionPrereq2>
             <UnitPrereq>NONE</UnitPrereq>
