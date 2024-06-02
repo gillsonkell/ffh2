@@ -59062,7 +59062,7 @@
         </EventInfo>
         <EventInfo>
             <Type>EVENT_INITIAL_3</Type>
-            <Description>A local archer offers to serve you, for a price...</Description>
+            <Description>A couple of runaway slaves offer to help you out for a little while in return for some much needed cash...</Description>
             <LocalInfoText></LocalInfoText>
             <WorldNewsTexts>
             </WorldNewsTexts>
@@ -59074,7 +59074,7 @@
             <bPickCity>0</bPickCity>
             <bPickOtherPlayerCity>0</bPickOtherPlayerCity>
             <bDeclareWar>0</bDeclareWar>
-            <iGold>-40</iGold>
+            <iGold>-50</iGold>
             <bGoldToPlayer>0</bGoldToPlayer>
             <iRandomGold>0</iRandomGold>
             <iCulture>0</iCulture>
@@ -59090,12 +59090,12 @@
             <iTechCostPercent>0</iTechCostPercent>
             <iTechMinTurnsLeft>0</iTechMinTurnsLeft>
             <PrereqTech>NONE</PrereqTech>
-            <UnitClass>UNITCLASS_ARCHER</UnitClass>
-            <iNumFreeUnits>1</iNumFreeUnits>
+            <UnitClass>UNITCLASS_SLAVE</UnitClass>
+            <iNumFreeUnits>2</iNumFreeUnits>
             <bDisbandUnit>0</bDisbandUnit>
             <iUnitExperience>0</iUnitExperience>
             <iUnitImmobileTurns>0</iUnitImmobileTurns>
-            <UnitPromotion>PROMOTION_CITY_GARRISON3</UnitPromotion>
+            <UnitPromotion>PROMOTION_STRONG</UnitPromotion>
             <UnitName></UnitName>
             <UnitCombatPromotions>
             </UnitCombatPromotions>
@@ -59175,7 +59175,7 @@
             <bPickCity>0</bPickCity>
             <bPickOtherPlayerCity>0</bPickOtherPlayerCity>
             <bDeclareWar>0</bDeclareWar>
-            <iGold>-100</iGold>
+            <iGold>-120</iGold>
             <bGoldToPlayer>0</bGoldToPlayer>
             <iRandomGold>0</iRandomGold>
             <iCulture>0</iCulture>
@@ -59276,7 +59276,7 @@
             <bPickCity>0</bPickCity>
             <bPickOtherPlayerCity>0</bPickOtherPlayerCity>
             <bDeclareWar>0</bDeclareWar>
-            <iGold>-100</iGold>
+            <iGold>-120</iGold>
             <bGoldToPlayer>0</bGoldToPlayer>
             <iRandomGold>0</iRandomGold>
             <iCulture>0</iCulture>

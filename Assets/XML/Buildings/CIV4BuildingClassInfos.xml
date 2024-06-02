@@ -1442,7 +1442,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_PAGAN_TEMPLE</Type>
-			<Description>TXT_KEY_BUILDING_PAGAN_TEMPLE</Description>
+			<Description>Temple of Rebirth</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>

@@ -1251,9 +1251,9 @@ class CvEventManager:
       city = unit.plot().getPlotCity()
       pop = city.getPopulation()
     
-    if unit.getUnitType() == gc.getInfoTypeForString('UNIT_WORKER'):
+    if unit.getUnitClassType() == gc.getInfoTypeForString('UNITCLASS_WORKER'):
       unit.setDuration( CyGame().getSorenRandNum(30, "Worker Lifespan") + pop * 5 )
-    if unit.getUnitType() == gc.getInfoTypeForString('UNIT_SLAVE'):
+    if unit.getUnitClassType() == gc.getInfoTypeForString('UNITCLASS_SLAVE'):
       unit.setDuration( CyGame().getSorenRandNum(30, "Slave Lifespan") + pop + 10 )
     
 #Conquestmode for Heroes (still needed?)

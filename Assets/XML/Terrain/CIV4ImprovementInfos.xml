@@ -575,8 +575,8 @@
         <ImprovementInfo>
             <Type>IMPROVEMENT_CASTLE</Type>
             <Description>TXT_KEY_IMPROVEMENT_CASTLE</Description>
-            <Civilopedia>[ICON_BULLET]Four units may train in the castle increasing their residual xp gain from 4% to 10%!</Civilopedia>
-            <Help></Help>
+            <Civilopedia></Civilopedia>
+            <Help>[ICON_BULLET]Four units may train in the castle increasing their residual xp gain from 4% to 10%!</Help>
             <ArtDefineTag>ART_DEF_IMPROVEMENT_CASTLE</ArtDefineTag>
             <bActsAsCity>0</bActsAsCity>
             <bHillsMakesValid>0</bHillsMakesValid>
@@ -1598,8 +1598,8 @@
         <ImprovementInfo>
             <Type>IMPROVEMENT_FORT</Type>
             <Description>TXT_KEY_IMPROVEMENT_FORT</Description>
-            <Civilopedia>[ICON_BULLET]Two units may train in the fort increasing their residual xp gain from 4% to 10%!</Civilopedia>
-            <Help></Help>
+            <Civilopedia></Civilopedia>
+            <Help>[ICON_BULLET]Two units may train in the fort increasing their residual xp gain from 4% to 10%!</Help>
             <ArtDefineTag>ART_DEF_IMPROVEMENT_FORT</ArtDefineTag>
             <bActsAsCity>0</bActsAsCity>
             <bHillsMakesValid>0</bHillsMakesValid>
@@ -6242,8 +6242,8 @@
         <ImprovementInfo>
             <Type>IMPROVEMENT_TOWER</Type>
             <Description>Tower</Description>
-            <Civilopedia>A single unit may train in a tower increasing their residual xp gain from 4% to 10% or 25% for mages!</Civilopedia>
-            <Help></Help>
+            <Civilopedia></Civilopedia>
+            <Help>A single unit may train in a tower increasing their residual xp gain from 4% to 10% or 25% for mages!</Help>
             <ArtDefineTag>ART_DEF_IMPROVEMENT_TOWER</ArtDefineTag>
             <bActsAsCity>0</bActsAsCity>
             <bHillsMakesValid>1</bHillsMakesValid>
@@ -7170,8 +7170,8 @@
         <ImprovementInfo>
             <Type>IMPROVEMENT_CANAL</Type>
             <Description>Canal</Description>
-            <Civilopedia>[ICON_BULLET]Acts as a city for defense (bad vs computers because of the Ravager promotion), can harvest resources and act as a canal.</Civilopedia>
-            <Help></Help>
+            <Civilopedia></Civilopedia>
+            <Help>[ICON_BULLET]Acts as a city for defense (bad vs computers because of the Ravager promotion), can harvest resources and act as a canal.</Help>
             <ArtDefineTag>ART_DEF_IMPROVEMENT_FORT</ArtDefineTag>
             <bActsAsCity>1</bActsAsCity>
             <bHillsMakesValid>0</bHillsMakesValid>
