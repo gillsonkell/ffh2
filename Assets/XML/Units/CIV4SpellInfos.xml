@@ -7706,6 +7706,7 @@
             <iAIWeight>0</iAIWeight>
             <bDisplayWhenDisabled>1</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
+            <bAbility>1</bAbility>
             <bIgnoreHasCasted>0</bIgnoreHasCasted>
             <bResistable>0</bResistable>
             <iRange>0</iRange>
@@ -7780,6 +7781,7 @@
             <iAIWeight>0</iAIWeight>
             <bDisplayWhenDisabled>1</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
+            <bAbility>1</bAbility>
             <bIgnoreHasCasted>0</bIgnoreHasCasted>
             <bResistable>0</bResistable>
             <iRange>0</iRange>
@@ -7928,6 +7930,7 @@
             <iAIWeight>0</iAIWeight>
             <bDisplayWhenDisabled>0</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
+            <bAbility>1</bAbility>
             <bIgnoreHasCasted>0</bIgnoreHasCasted>
             <bResistable>0</bResistable>
             <iRange>0</iRange>
@@ -8002,6 +8005,7 @@
             <iAIWeight>0</iAIWeight>
             <bDisplayWhenDisabled>0</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
+            <bAbility>1</bAbility>
             <bIgnoreHasCasted>0</bIgnoreHasCasted>
             <bResistable>0</bResistable>
             <iRange>0</iRange>
@@ -8076,6 +8080,7 @@
             <iAIWeight>0</iAIWeight>
             <bDisplayWhenDisabled>0</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
+            <bAbility>1</bAbility>
             <bIgnoreHasCasted>0</bIgnoreHasCasted>
             <bResistable>0</bResistable>
             <iRange>0</iRange>
@@ -8151,6 +8156,7 @@
             <iAIWeight>0</iAIWeight>
             <bDisplayWhenDisabled>0</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
+            <bAbility>1</bAbility>
             <bIgnoreHasCasted>0</bIgnoreHasCasted>
             <bResistable>0</bResistable>
             <iRange>0</iRange>
@@ -8226,6 +8232,7 @@
             <iAIWeight>0</iAIWeight>
             <bDisplayWhenDisabled>0</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
+            <bAbility>1</bAbility>
             <bIgnoreHasCasted>0</bIgnoreHasCasted>
             <bResistable>0</bResistable>
             <iRange>0</iRange>
@@ -8300,6 +8307,7 @@
             <iAIWeight>1000</iAIWeight>
             <bDisplayWhenDisabled>0</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
+            <bAbility>1</bAbility>
             <bIgnoreHasCasted>0</bIgnoreHasCasted>
             <bResistable>0</bResistable>
             <iRange>0</iRange>
@@ -8523,6 +8531,7 @@
             <iAIWeight>0</iAIWeight>
             <bDisplayWhenDisabled>0</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
+            <bAbility>1</bAbility>
             <bIgnoreHasCasted>0</bIgnoreHasCasted>
             <bResistable>0</bResistable>
             <iRange>0</iRange>
@@ -8597,6 +8606,7 @@
             <iAIWeight>0</iAIWeight>
             <bDisplayWhenDisabled>0</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
+            <bAbility>1</bAbility>
             <bIgnoreHasCasted>0</bIgnoreHasCasted>
             <bResistable>0</bResistable>
             <iRange>0</iRange>
@@ -8968,6 +8978,7 @@
             <iAIWeight>0</iAIWeight>
             <bDisplayWhenDisabled>0</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
+            <bAbility>1</bAbility>
             <bIgnoreHasCasted>0</bIgnoreHasCasted>
             <bResistable>0</bResistable>
             <iRange>0</iRange>
@@ -9042,6 +9053,7 @@
             <iAIWeight>0</iAIWeight>
             <bDisplayWhenDisabled>0</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
+            <bAbility>1</bAbility>
             <bIgnoreHasCasted>0</bIgnoreHasCasted>
             <bResistable>0</bResistable>
             <iRange>0</iRange>
@@ -9641,6 +9653,7 @@
             <iAIWeight>100</iAIWeight>
             <bDisplayWhenDisabled>0</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
+            <bAbility>1</bAbility>
             <bIgnoreHasCasted>1</bIgnoreHasCasted>
             <bResistable>0</bResistable>
             <iRange>0</iRange>
@@ -9715,6 +9728,7 @@
             <iAIWeight>100</iAIWeight>
             <bDisplayWhenDisabled>0</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
+            <bAbility>1</bAbility>
             <bIgnoreHasCasted>1</bIgnoreHasCasted>
             <bResistable>0</bResistable>
             <iRange>0</iRange>
@@ -9789,6 +9803,7 @@
             <iAIWeight>100</iAIWeight>
             <bDisplayWhenDisabled>0</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
+            <bAbility>1</bAbility>
             <bIgnoreHasCasted>1</bIgnoreHasCasted>
             <bResistable>0</bResistable>
             <iRange>0</iRange>
@@ -9863,6 +9878,7 @@
             <iAIWeight>100</iAIWeight>
             <bDisplayWhenDisabled>0</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
+            <bAbility>1</bAbility>
             <bIgnoreHasCasted>1</bIgnoreHasCasted>
             <bResistable>0</bResistable>
             <iRange>0</iRange>
@@ -9936,7 +9952,9 @@
             <bInCityOnly>0</bInCityOnly>
             <iAIWeight>100</iAIWeight>
             <bDisplayWhenDisabled>0</bDisplayWhenDisabled>
+            <bAbility>1</bAbility>
             <bHasCasted>1</bHasCasted>
+            <bAbility>1</bAbility>
             <bIgnoreHasCasted>1</bIgnoreHasCasted>
             <bResistable>0</bResistable>
             <iRange>0</iRange>
@@ -10011,6 +10029,7 @@
             <iAIWeight>100</iAIWeight>
             <bDisplayWhenDisabled>0</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
+            <bAbility>1</bAbility>
             <bIgnoreHasCasted>1</bIgnoreHasCasted>
             <bResistable>0</bResistable>
             <iRange>0</iRange>
@@ -10085,6 +10104,7 @@
             <iAIWeight>100</iAIWeight>
             <bDisplayWhenDisabled>1</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
+            <bAbility>1</bAbility>
             <bIgnoreHasCasted>1</bIgnoreHasCasted>
             <bResistable>0</bResistable>
             <iRange>0</iRange>
@@ -10159,6 +10179,7 @@
             <iAIWeight>100</iAIWeight>
             <bDisplayWhenDisabled>0</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
+            <bAbility>1</bAbility>
             <bIgnoreHasCasted>1</bIgnoreHasCasted>
             <bResistable>0</bResistable>
             <iRange>0</iRange>
@@ -10233,6 +10254,7 @@
             <iAIWeight>100</iAIWeight>
             <bDisplayWhenDisabled>0</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
+            <bAbility>1</bAbility>
             <bIgnoreHasCasted>1</bIgnoreHasCasted>
             <bResistable>0</bResistable>
             <iRange>0</iRange>
@@ -10307,6 +10329,7 @@
             <iAIWeight>100</iAIWeight>
             <bDisplayWhenDisabled>0</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
+            <bAbility>1</bAbility>
             <bIgnoreHasCasted>1</bIgnoreHasCasted>
             <bResistable>0</bResistable>
             <iRange>0</iRange>
@@ -10381,6 +10404,7 @@
             <iAIWeight>100</iAIWeight>
             <bDisplayWhenDisabled>0</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
+            <bAbility>1</bAbility>
             <bIgnoreHasCasted>1</bIgnoreHasCasted>
             <bResistable>0</bResistable>
             <iRange>0</iRange>

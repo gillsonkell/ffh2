@@ -570,11 +570,15 @@ class CvGameUtils:
         sCityInfo['OBELISK'] = 1
       if sCityInfo['OBELISK'] > 0 or pCity.getCulture(pCity.getOwner()) < 12000:
         return True
+      if pPlayer.getAlignment() == gc.getInfoTypeForString('ALIGNMENT_EVIL'):
+        return True
 
     if eUnit == gc.getInfoTypeForString('UNIT_PRIEST'):
       if 'TEMPLE' not in sCityInfo:
         sCityInfo['TEMPLE'] = 1
       if sCityInfo['TEMPLE'] > 0 or pCity.getCulture(pCity.getOwner()) < 7000:
+        return True
+      if pPlayer.getAlignment() == gc.getInfoTypeForString('ALIGNMENT_EVIL'):
         return True
 
     if eUnit == gc.getInfoTypeForString('UNIT_RECRUIT'):

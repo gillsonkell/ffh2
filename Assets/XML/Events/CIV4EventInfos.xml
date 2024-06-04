@@ -56374,7 +56374,7 @@
             </UnitCombatPromotions>
             <UnitClassPromotions>
             </UnitClassPromotions>
-            <BuildingClass>BUILDINGCLASS_LIBRARY</BuildingClass>
+            <BuildingClass>BUILDINGCLASS_ARCHMAGE_STUDY</BuildingClass>
             <iBuildingChange>0</iBuildingChange>
             <BuildingExtraYields>
             </BuildingExtraYields>
@@ -56475,7 +56475,7 @@
             </UnitCombatPromotions>
             <UnitClassPromotions>
             </UnitClassPromotions>
-            <BuildingClass>BUILDINGCLASS_LIBRARY</BuildingClass>
+            <BuildingClass>BUILDINGCLASS_ARCHMAGE_STUDY</BuildingClass>
             <iBuildingChange>0</iBuildingChange>
             <BuildingExtraYields>
             </BuildingExtraYields>
@@ -56576,7 +56576,7 @@
             </UnitCombatPromotions>
             <UnitClassPromotions>
             </UnitClassPromotions>
-            <BuildingClass>BUILDINGCLASS_LIBRARY</BuildingClass>
+            <BuildingClass>BUILDINGCLASS_ARCHMAGE_STUDY</BuildingClass>
             <iBuildingChange>0</iBuildingChange>
             <BuildingExtraYields>
             </BuildingExtraYields>
@@ -59163,7 +59163,7 @@
         </EventInfo>
         <EventInfo>
             <Type>EVENT_INITIAL_4</Type>
-            <Description>A hardy travelling priest could be enticed to join the war...</Description>
+            <Description>A frail travelling priest could be enticed to join the war...</Description>
             <LocalInfoText></LocalInfoText>
             <WorldNewsTexts>
             </WorldNewsTexts>
@@ -59175,7 +59175,7 @@
             <bPickCity>0</bPickCity>
             <bPickOtherPlayerCity>0</bPickOtherPlayerCity>
             <bDeclareWar>0</bDeclareWar>
-            <iGold>-120</iGold>
+            <iGold>-100</iGold>
             <bGoldToPlayer>0</bGoldToPlayer>
             <iRandomGold>0</iRandomGold>
             <iCulture>0</iCulture>
@@ -59196,7 +59196,7 @@
             <bDisbandUnit>0</bDisbandUnit>
             <iUnitExperience>0</iUnitExperience>
             <iUnitImmobileTurns>0</iUnitImmobileTurns>
-            <UnitPromotion>PROMOTION_STRONG</UnitPromotion>
+            <UnitPromotion>PROMOTION_WEAK</UnitPromotion>
             <UnitName></UnitName>
             <UnitCombatPromotions>
             </UnitCombatPromotions>
@@ -59264,7 +59264,7 @@
         </EventInfo>
         <EventInfo>
             <Type>EVENT_INITIAL_5</Type>
-            <Description>A strong young adept is eager to find adventure...</Description>
+            <Description>A tired old adept is willing to aid...</Description>
             <LocalInfoText></LocalInfoText>
             <WorldNewsTexts>
             </WorldNewsTexts>
@@ -59297,7 +59297,7 @@
             <bDisbandUnit>0</bDisbandUnit>
             <iUnitExperience>0</iUnitExperience>
             <iUnitImmobileTurns>0</iUnitImmobileTurns>
-            <UnitPromotion>PROMOTION_STRONG</UnitPromotion>
+            <UnitPromotion>PROMOTION_WEAK</UnitPromotion>
             <UnitName></UnitName>
             <UnitCombatPromotions>
             </UnitCombatPromotions>
@@ -60678,7 +60678,7 @@
         </EventInfo>
         <EventInfo>
             <Type>EVENT_INITIAL_19</Type>
-            <Description>A strange boy who can talk to beasts...</Description>
+            <Description>A strange boy who can talk to beasts has been found.  Shall we conscript him?</Description>
             <LocalInfoText></LocalInfoText>
             <WorldNewsTexts>
             </WorldNewsTexts>

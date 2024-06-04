@@ -31047,10 +31047,10 @@
             <bHeadquarters>0</bHeadquarters>
             <Events>
                 <Event>EVENT_INITIAL_1</Event>
+                <Event>EVENT_INITIAL_9</Event>
                 <Event>EVENT_INITIAL_3</Event>
                 <Event>EVENT_INITIAL_2</Event>
                 <Event>EVENT_INITIAL_10</Event>
-                <Event>EVENT_INITIAL_4</Event>
             </Events>
             <PrereqEvents>
             </PrereqEvents>
@@ -31148,10 +31148,10 @@
             <bPickCorporation>0</bPickCorporation>
             <bHeadquarters>0</bHeadquarters>
             <Events>
-                <Event>EVENT_INITIAL_9</Event>
                 <Event>EVENT_INITIAL_8</Event>
-                <Event>EVENT_INITIAL_5</Event>
                 <Event>EVENT_INITIAL_6</Event>
+                <Event>EVENT_INITIAL_4</Event>
+                <Event>EVENT_INITIAL_5</Event>
                 <Event>EVENT_INITIAL_7</Event>
             </Events>
             <PrereqEvents>
@@ -31251,8 +31251,8 @@
             <bHeadquarters>0</bHeadquarters>
             <Events>
                 <Event>EVENT_INITIAL_14</Event>
-                <Event>EVENT_INITIAL_13</Event>
                 <Event>EVENT_INITIAL_21</Event>
+                <Event>EVENT_INITIAL_13</Event>
                 <Event>EVENT_INITIAL_12</Event>
             </Events>
             <PrereqEvents>

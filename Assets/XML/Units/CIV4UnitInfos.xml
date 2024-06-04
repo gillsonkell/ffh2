@@ -80269,7 +80269,7 @@
             <Invisible>NONE</Invisible>
             <SeeInvisible>INVISIBLE_LAND</SeeInvisible>
             <Description>Priest of Rebirth</Description>
-            <Civilopedia>Priests of Rebirth are classic multi-purpose religious units.  Later, at level 7, they may be upgraded to the more powerful Cleric of Rebirth who, with access to Life Mana, can bestow extra lives to living units.  They may be recruited in cities with a Temple of Rebirth and a culture of 7,000 or greater.  Only one may be recruited per Temple of Rebirth and there are only 7 in the world.</Civilopedia>
+            <Civilopedia>Priests of Rebirth are classic multi-purpose religious units.  Later, at level 7, they may be upgraded to the more powerful Cleric of Rebirth who, with access to Life Mana, can bestow extra lives to living units.  They may be recruited in cities with a Temple of Rebirth and a culture of 7,000 or greater.  Only one may be recruited per Temple of Rebirth and there are only 7 in the world.  They will not normally join evil civilizations.</Civilopedia>
             <Strategy></Strategy>
             <Advisor>ADVISOR_RELIGION</Advisor>
             <bAnimal>0</bAnimal>
@@ -82153,8 +82153,8 @@
             <Invisible>NONE</Invisible>
             <SeeInvisible>NONE</SeeInvisible>
             <Description>Istari</Description>
-            <Civilopedia>[NEWLINE][ICON_BULLET]May be recruited in cities with a library and a culture of 12,000 or greater.[NEWLINE][ICON_BULLET]There are only 5 Istari in Erebus.  They are attracted to the libraries of cultured cities.</Civilopedia>
-            <Strategy>[ICON_BULLET]The 5 Istari love studying the ancient texts of Erebus.  They can study at libraries for a significant boost in promotions.  They have tremendous potential if they study diligently.</Strategy>
+            <Civilopedia>[NEWLINE][ICON_BULLET]May be recruited in cities with a library and a culture of 12,000 or greater.[NEWLINE][ICON_BULLET]There are only 5 Istari in Erebus.  They are attracted to the libraries of cultured cities. They will not normally join evil civilizations.</Civilopedia>
+            <Strategy>[ICON_BULLET]The 5 Istari love studying the ancient texts of Erebus.  They can study at libraries for a significant boost in promotions.  They have tremendous potential if they study diligently since they study at half an adept's cost.</Strategy>
             <Advisor>ADVISOR_MILITARY</Advisor>
             <bAnimal>0</bAnimal>
             <bFood>0</bFood>
