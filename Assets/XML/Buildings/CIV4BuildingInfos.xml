@@ -18321,7 +18321,7 @@
             <bPrereqReligion>0</bPrereqReligion>
             <bCenterInCity>0</bCenterInCity>
             <iAIWeight>0</iAIWeight>
-            <iCost>400</iCost>
+            <iCost>800</iCost>
             <iHurryCostModifier>100</iHurryCostModifier>
             <iAdvancedStartCost>-1</iAdvancedStartCost>
             <iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
@@ -19144,7 +19144,7 @@
             <SpecialBuildingType>NONE</SpecialBuildingType>
             <Description>TXT_KEY_BUILDING_LIBRARY</Description>
             <Civilopedia>TXT_KEY_BUILDING_PLACEHOLDER_PEDIA</Civilopedia>
-            <Strategy></Strategy>
+            <Strategy>Arcane units and nobles may be study here for extra promotions.  This requires 50gp for Istari, 100gp for nobles and adepts, 150gp for mages and 200gp for archmages.  Stock is depleted by half the gold cost as well.</Strategy>
             <Help></Help>
             <Advisor>ADVISOR_SCIENCE</Advisor>
             <ArtDefineTag>ART_DEF_BUILDING_LIBRARY</ArtDefineTag>
@@ -29483,7 +29483,7 @@
             <bPrereqReligion>0</bPrereqReligion>
             <bCenterInCity>0</bCenterInCity>
             <iAIWeight>0</iAIWeight>
-            <iCost>200</iCost>
+            <iCost>400</iCost>
             <iHurryCostModifier>0</iHurryCostModifier>
             <iAdvancedStartCost>100</iAdvancedStartCost>
             <iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>

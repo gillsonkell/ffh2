@@ -7713,6 +7713,7 @@
         <PromotionInfo>
             <Type>PROMOTION_SUMMONER</Type>
             <Description>TXT_KEY_PROMOTION_SUMMONER</Description>
+            <Help></Help>
             <Sound>AS2D_IF_LEVELUP</Sound>
             <PromotionPrereq>PROMOTION_COMBAT2</PromotionPrereq>
             <UnitCombats>
@@ -20574,7 +20575,7 @@
             <BonusPrereq>NONE</BonusPrereq>
             <PromotionPrereqOr3>NONE</PromotionPrereqOr3>
             <PromotionPrereqOr4>NONE</PromotionPrereqOr4>
-            <PromotionPrereqAnd>PROMOTION_COMBAT2</PromotionPrereqAnd>
+            <PromotionPrereqAnd>PROMOTION_COMBAT3</PromotionPrereqAnd>
             <PromotionNextLevel>NONE</PromotionNextLevel>
             <PyPerTurn></PyPerTurn>
             <iGroupSize>0</iGroupSize>

@@ -993,18 +993,20 @@ class CvEventManager:
             if (pUnit.isHasPromotion(iDemon) or pUnit.isHasPromotion(iUndead)):
               pUnit.kill(False, iPlayer)
 
+    # World Size Mod - MTK
+    i = 7
+    if CyMap().getWorldSize() == gc.getInfoTypeForString('WORLDSIZE_DUEL'):
+      i = i - 3
+    if CyMap().getWorldSize() == gc.getInfoTypeForString('WORLDSIZE_TINY'):
+      i = i - 2
+    if CyMap().getWorldSize() == gc.getInfoTypeForString('WORLDSIZE_SMALL'):
+      i = i - 1
+    if CyMap().getWorldSize() == gc.getInfoTypeForString('WORLDSIZE_LARGE'):
+      i = i + 1
+    if CyMap().getWorldSize() == gc.getInfoTypeForString('WORLDSIZE_HUGE'):
+      i = i + 3
+
     if iProjectType == gc.getInfoTypeForString('PROJECT_RITES_OF_OGHMA'):
-      i = 7
-      if CyMap().getWorldSize() == gc.getInfoTypeForString('WORLDSIZE_DUEL'):
-        i = i - 3
-      if CyMap().getWorldSize() == gc.getInfoTypeForString('WORLDSIZE_TINY'):
-        i = i - 2
-      if CyMap().getWorldSize() == gc.getInfoTypeForString('WORLDSIZE_SMALL'):
-        i = i - 1
-      if CyMap().getWorldSize() == gc.getInfoTypeForString('WORLDSIZE_LARGE'):
-        i = i + 1
-      if CyMap().getWorldSize() == gc.getInfoTypeForString('WORLDSIZE_HUGE'):
-        i = i + 3
       cf.addBonus('BONUS_MANA',i,'Art/Interface/Buttons/WorldBuilder/mana_button.dds')
 
     if iProjectType == gc.getInfoTypeForString('PROJECT_NATURES_REVOLT'):
@@ -1023,28 +1025,50 @@ class CvEventManager:
       iWarrior = gc.getInfoTypeForString('UNITCLASS_WARRIOR')
       iWolf = gc.getInfoTypeForString('UNIT_WOLF')
       iWorker = gc.getInfoTypeForString('UNITCLASS_WORKER')
-      for pUnit in py.getUnitList():
-        bValid = False
-        if pUnit.getUnitClassType() == iWorker:
-          iNewUnit = iWolf
-          bValid = True
-        if pUnit.getUnitClassType() == iScout:
-          iNewUnit = iLion
-          bValid = True
-        if pUnit.getUnitClassType() == iWarrior:
-          iNewUnit = iLion
-          bValid = True
-        if pUnit.getUnitClassType() == iHunter:
-          iNewUnit = iTiger
-          bValid = True
-        if pUnit.getUnitClassType() == iAxeman:
+      # MTK
+      for ii in range( i * 3 ):
+        iNewUnit = CyGame().getSorenRandNum(8, "NewAnimal") + 1
+        if iNewUnit == 1:
           iNewUnit = iBear
-          bValid = True
-        if bValid:
-          newUnit = bPlayer.initUnit(iNewUnit, pUnit.getX(), pUnit.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_NORTH)
-          newUnit = bPlayer.initUnit(iNewUnit, pUnit.getX(), pUnit.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_NORTH)
-          newUnit = bPlayer.initUnit(iNewUnit, pUnit.getX(), pUnit.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_NORTH)
-          pUnit.kill(True, PlayerTypes.NO_PLAYER)
+        elif iNewUnit == 2:
+          iNewUnit = iLion
+        elif iNewUnit == 3:
+          iNewUnit = iTiger
+        elif iNewUnit == 4:
+          iNewUnit = iWolf
+        elif iNewUnit == 5:
+          iNewUnit = gc.getInfoTypeForString('UNIT_GORILLA')
+        elif iNewUnit == 6:
+          iNewUnit = gc.getInfoTypeForString('UNIT_SCORPION')
+        elif iNewUnit == 7:
+          iNewUnit = iBear
+        elif iNewUnit == 8:
+          iNewUnit = iLion
+          
+        cf.addBarbUnit(iNewUnit)
+        
+      # for pUnit in py.getUnitList():
+        # bValid = False
+        # if pUnit.getUnitClassType() == iWorker:
+          # iNewUnit = iWolf
+          # bValid = True
+        # if pUnit.getUnitClassType() == iScout:
+          # iNewUnit = iLion
+          # bValid = True
+        # if pUnit.getUnitClassType() == iWarrior:
+          # iNewUnit = iLion
+          # bValid = True
+        # if pUnit.getUnitClassType() == iHunter:
+          # iNewUnit = iTiger
+          # bValid = True
+        # if pUnit.getUnitClassType() == iAxeman:
+          # iNewUnit = iBear
+          # bValid = True
+        # if bValid:
+          # newUnit = bPlayer.initUnit(iNewUnit, pUnit.getX(), pUnit.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_NORTH)
+          # newUnit = bPlayer.initUnit(iNewUnit, pUnit.getX(), pUnit.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_NORTH)
+          # newUnit = bPlayer.initUnit(iNewUnit, pUnit.getX(), pUnit.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_NORTH)
+          # pUnit.kill(True, PlayerTypes.NO_PLAYER)
       for iLoopPlayer in range(gc.getMAX_PLAYERS()):
         pLoopPlayer = gc.getPlayer(iLoopPlayer)
         if pLoopPlayer.isAlive():
@@ -1275,6 +1299,7 @@ class CvEventManager:
         elif unit.getUnitClassType()==gc.getReligionInfo(pPlayer.getFavoriteReligion()).getReligionHero2():
           unit.startConquestMode()          
                   
+# mtk                  
     if unit.getUnitCombatType() == gc.getInfoTypeForString('UNITCOMBAT_MOUNTED'):
       iNum = pPlayer.getNumAvailableBonuses(gc.getInfoTypeForString('BONUS_HORSE')) + pPlayer.getNumAvailableBonuses(gc.getInfoTypeForString('BONUS_NIGHTMARE')) + pPlayer.getNumAvailableBonuses(gc.getInfoTypeForString('BONUS_IVORY'))
       if iNum > 1:
@@ -2778,8 +2803,8 @@ class CvEventManager:
           if pPlayer.getUnitClassCount(gc.getInfoTypeForString('UNITCLASS_MINOTAUR')) < iMax:
             listUnits.append(gc.getInfoTypeForString('UNIT_MINOTAUR'))
         if pCity.getNumBuilding(gc.getInfoTypeForString('BUILDING_TEMPLE_OF_THE_VEIL')) > 0:
-          if pPlayer.getUnitClassCount(gc.getInfoTypeForString('UNITCLASS_TAR_DEMON_MED')) < iMax:
-            listUnits.append(gc.getInfoTypeForString('UNIT_TAR_DEMON_MED'))
+          if pPlayer.getUnitClassCount(gc.getInfoTypeForString('UNITCLASS_TAR_DEMON')) < iMax:
+            listUnits.append(gc.getInfoTypeForString('UNIT_TAR_DEMON'))
         if len(listUnits) > 0:
           iUnit = listUnits[CyGame().getSorenRandNum(len(listUnits), "Planar Gate")]
           newUnit = pPlayer.initUnit(iUnit, pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)

@@ -2748,13 +2748,36 @@ def spellRobGrave(caster):
   if sGoody == 'SPAWN_SPECTRE':
     pPlayer.receiveGoody(pPlot, gc.getInfoTypeForString('GOODY_GRAVE_SPECTRE'), caster)
 
+def reqSacrificeAltar(caster):
+  pPlayer = gc.getPlayer(caster.getOwner())
+  if cf.getObjectInt(caster.plot().getPlotCity(),'Sacrifice') >= CyGame().getGameTurn():
+    return False
+  return True
+
 def spellSacrificeAltar(caster):
   pPlayer = gc.getPlayer(caster.getOwner())
   pPlot = caster.plot()
+  pCity = caster.plot().getPlotCity()
   eTeam = gc.getTeam(pPlayer.getTeam())
   iTech = pPlayer.getCurrentResearch()
   iNum = 10 + (caster.getLevel() * caster.getLevel())
   eTeam.changeResearchProgress(iTech, iNum, caster.getOwner())
+
+  if pCity.getNumRealBuilding(gc.getInfoTypeForString('BUILDING_MOKKAS_CAULDRON')) > 0:
+    cf.setObjectInt(caster.plot().getPlotCity(),'Sacrifice',(CyGame().getGameTurn()+5))
+    if pCity.getOwner() == caster.getOwner():
+      for iProm in range(gc.getNumPromotionInfos()):
+        if caster.isHasPromotion(iProm):
+          if gc.getPromotionInfo(iProm).isRace():
+            caster.setHasPromotion(iProm, False)
+      caster.setHasPromotion(gc.getInfoTypeForString('PROMOTION_DEMON'), True)
+      caster.setDamage(75, PlayerTypes.NO_PLAYER)
+      caster.finishMoves()
+      szBuffer = gc.getUnitInfo(caster.getUnitType()).getDescription()
+      CyInterface().addMessage(caster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_MOKKAS_CAULDRON",((szBuffer, ))),'AS2D_DISCOVERBONUS',1,'Art/Interface/Buttons/Buildings/Mokkas Cauldron.dds',ColorTypes(7),pCity.getX(),pCity.getY(),True,True)
+  else:
+    cf.setObjectInt(caster.plot().getPlotCity(),'Sacrifice',CyGame().getGameTurn())
+    caster.kill(True,0)
 
 def spellSacrificePyre(caster):
   pPlayer = gc.getPlayer(caster.getOwner())
@@ -2953,8 +2976,10 @@ def spellSlaveTradeBuy(caster):
     iPromotion = gc.getInfoTypeForString('PROMOTION_DWARF')
   if (iRnd >= 70 and iRnd < 80):
     iPromotion = gc.getInfoTypeForString('PROMOTION_ELF')
-  if (iRnd >= 80):
+  if (iRnd >= 80 and iRnd < 95):
     iPromotion = gc.getInfoTypeForString('PROMOTION_ORC')
+  if (iRnd >= 95):
+    iPromotion = gc.getInfoTypeForString('PROMOTION_LIZARDMAN')
   if iPromotion != -1:
     newUnit.setHasPromotion(iPromotion, True)
   # One every few turns depending on city population
@@ -4334,6 +4359,9 @@ def reqSustain(caster):
 def spellSustain(caster):
   cf.spellSustain(caster)
 
+def spellUnsummon(caster):
+  cf.spellUnsummon(caster)
+
 def reqTakeEquipment(caster,unit):
   if caster.getUnitCombatType() == gc.getInfoTypeForString('UNITCOMBAT_SIEGE'):
     return False
@@ -4615,14 +4643,22 @@ def reqLearnMagic(caster):
   pCity = caster.plot().getPlotCity()
   pPlayer = gc.getPlayer(caster.getOwner())
 
-  iCost = 50
-  if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_CHANNELING1')):
-    iCost += 50
-  if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_CHANNELING2')):
-    iCost += 50
-  if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_CHANNELING3')):
-    iCost += 50
+  iCost = 0
 
+  if caster.getUnitCombatType() == gc.getInfoTypeForString('UNITCOMBAT_ADEPT'):
+    iCost = 50
+    if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_CHANNELING1')):
+      iCost += 50
+    if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_CHANNELING2')):
+      iCost += 50
+    if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_CHANNELING3')):
+      iCost += 50
+  if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_NOBILITY')) and iCost < 100:
+    iCost = 100
+    
+  if iCost < 1:
+    return False
+    
   if pPlayer.getGold() < iCost:
     return False  
 
@@ -4930,6 +4966,8 @@ def spellSummonCustom(caster,sUnit):
       newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_MOBILITY1'),True)
     if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_EXTENSION2')):
       newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_MOBILITY2'),True)
+    if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_SUNDERED')):
+      newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_STIGMATA'),True)
       
 
 def spellSummonScroll(caster,sUnit,mode):
@@ -4968,21 +5006,23 @@ def spellSummonScroll(caster,sUnit,mode):
     
   for i in range(iL):
     newUnit = bPlayer.initUnit(gc.getInfoTypeForString(sUnit), iX, iY, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-    if (sUnit == 'UNIT_MAGIC_MISSILE' or sUnit == 'UNIT_FIREBALL'):
+    if (sUnit == 'UNIT_MAGIC_MISSILE' or sUnit == 'UNIT_FIREBALL' or sUnit == 'UNIT_METEOR'):
       newUnit.setDuration(1)
     else:
-      newUnit.changeExperience(caster.getLevel(),-1,False,False,False)
+      iDur = 3
       if bPlayer.hasTrait(gc.getInfoTypeForString('TRAIT_SUMMONER')):
-        newUnit.setDuration(5)
-      else:
-        newUnit.setDuration(3)
-
-      newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_COMBAT1'),True)
+        iDur += 1
+      if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_SUMMONER')):
+        iDur += 1
+      if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_SUMMONING')):
+        iDur += 1
+      
+      newUnit.setDuration(iDur)
 
       if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_SUMMONER')):
-        newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_COMBAT2'),True)
+        newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_COMBAT1'),True)
       if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_SUMMONING')):
-        newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_COMBAT3'),True)
+        newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_COMBAT2'),True)
       if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_COMBAT1')):
         newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_EMPOWER1'),True)
       if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_COMBAT2')):
@@ -4997,6 +5037,8 @@ def spellSummonScroll(caster,sUnit,mode):
         newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_MOBILITY1'),True)
       if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_EXTENSION2')):
         newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_MOBILITY2'),True)
+      if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_SUNDERED')):
+        newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_STIGMATA'),True)
 
       if ssUnit == 'x':
         if mode == 'caster':

@@ -2081,7 +2081,7 @@
             <bBuildingOnlyHealthy>0</bBuildingOnlyHealthy>
             <iLargestCityHappiness>0</iLargestCityHappiness>
             <iWarWearinessModifier>0</iWarWearinessModifier>
-            <iFreeSpecialist>0</iFreeSpecialist>
+            <iFreeSpecialist>1</iFreeSpecialist>
             <iTradeRoutes>0</iTradeRoutes>
             <bNoForeignTrade>0</bNoForeignTrade>
             <bNoCorporations>0</bNoCorporations>
@@ -2095,6 +2095,9 @@
             <iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
             <iStateReligionFreeExperience>0</iStateReligionFreeExperience>
             <YieldModifiers>
+                <iYield>0</iYield>
+                <iYield>25</iYield>
+                <iYield>0</iYield>
             </YieldModifiers>
             <CapitalYieldModifiers>
             </CapitalYieldModifiers>
@@ -2105,6 +2108,9 @@
             <CapitalCommerceModifiers>
             </CapitalCommerceModifiers>
             <SpecialistExtraCommerces>
+                <iCommerce>3</iCommerce>
+                <iCommerce>0</iCommerce>
+                <iCommerce>0</iCommerce>
             </SpecialistExtraCommerces>
             <Hurrys>
                 <Hurry>
@@ -2115,19 +2121,7 @@
             <SpecialBuildingNotRequireds></SpecialBuildingNotRequireds>
             <SpecialistValids>
                 <SpecialistValid>
-                    <SpecialistType>SPECIALIST_ARTIST</SpecialistType>
-                    <bValid>1</bValid>
-                </SpecialistValid>
-                <SpecialistValid>
-                    <SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
-                    <bValid>1</bValid>
-                </SpecialistValid>
-                <SpecialistValid>
                     <SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
-                    <bValid>1</bValid>
-                </SpecialistValid>
-                <SpecialistValid>
-                    <SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
                     <bValid>1</bValid>
                 </SpecialistValid>
             </SpecialistValids>

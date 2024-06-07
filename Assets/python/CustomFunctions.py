@@ -69,20 +69,47 @@ class CustomFunctions:
           sMsg = 'An unusally skilled ' + str( unit.getName() ) + ' has become apparent!'
           CyInterface().addMessage(unit.getOwner(),false,25,sMsg,'AS3D_SPELL_CHARM_PERSON',1,unit.getButton(),ColorTypes(8),unit.getX(),unit.getY(),True,True)
 
-      if CyGame().getSorenRandNum(50, "RandomSinister") == 2:
-        if unit.baseCombatStr() > 1:
+      if unit.baseCombatStr() > 1:
+        iSpecialChance = 200
+        
+        if CyGame().getSorenRandNum(iSpecialChance, "RandomSinister") == 1:
           unit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_SINISTER'), True)
 
-      if CyGame().getSorenRandNum(50, "RandomHealer") == 4:
-        if unit.baseCombatStr() > 1:
+        if CyGame().getSorenRandNum(iSpecialChance, "RandomHealer") == 2:
           unit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_BASIC_HEALING'), True)
 
-      if CyGame().getSorenRandNum(50, "RandomDexterous") == 3:
-        if unit.baseCombatStr() > 1:
+        if CyGame().getSorenRandNum(iSpecialChance, "RandomDexterous") == 3:
           unit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_DEXTEROUS'), True)
 
-      # if unit.getGameTurnCreated() < 1 and pPlayer.isHuman():
-        # unit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_NOBILITY'), True)
+        if CyGame().getSorenRandNum(iSpecialChance, "RandomBlessed") == 4:
+          unit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_BLESSED'), True)
+
+        if CyGame().getSorenRandNum(iSpecialChance, "RandomCourage") == 5:
+          unit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_COURAGE'), True)
+
+        if CyGame().getSorenRandNum(iSpecialChance, "RandomHeavy") == 6:
+          unit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_HEAVY'), True)
+
+        if CyGame().getSorenRandNum(iSpecialChance, "RandomLight") == 7:
+          unit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_LIGHT'), True)
+
+        if CyGame().getSorenRandNum(iSpecialChance, "RandomLoyalty") == 8:
+          unit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_LOYALTY'), True)
+
+        if CyGame().getSorenRandNum(iSpecialChance, "RandomPotency") == 9:
+          unit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_POTENCY'), True)
+
+        if CyGame().getSorenRandNum(iSpecialChance, "RandomProphecyMark") == 10:
+          unit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_PROPHECY_MARK'), True)
+
+        if CyGame().getSorenRandNum(iSpecialChance, "RandomSpiritGuide") == 11:
+          unit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_SPIRIT_GUIDE'), True)
+
+        if CyGame().getSorenRandNum(iSpecialChance, "RandomValor") == 12:
+          unit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_VALOR'), True)
+
+        if CyGame().getSorenRandNum(iSpecialChance, "RandomStigmata") == 13:
+          unit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_STIGMATA'), True)
             
       ## Dire beasts and dragons add a chance that new living units will start with the Cult of the Dragon promotion...
       if unit.isAlive():
@@ -931,6 +958,30 @@ class CustomFunctions:
     if pBestUnit != -1:
       pBestUnit.setDuration( iDuration + iSustain )
     
+  def spellUnsummon(self, caster):
+    iSustain = 1
+    bPlayer = gc.getPlayer(caster.getOwner())
+    if bPlayer.hasTrait(gc.getInfoTypeForString('TRAIT_SUMMONER')):
+      iSustain = 2
+    iDuration = 99
+    pBestUnit = -1
+    pPlot = caster.plot()
+    for ii in range(iSustain):
+      for i in range(pPlot.getNumUnits()):
+        pUnit = pPlot.getUnit(i)
+        bUnit = True
+        if ( pUnit.getUnitType() == gc.getInfoTypeForString('UNIT_MAGIC_MISSILE') or pUnit.getUnitType() == gc.getInfoTypeForString('UNIT_FIREBALL') or pUnit.getUnitType() == gc.getInfoTypeForString('UNIT_METEOR') ):
+          bUnit = False
+        if ( pUnit.getDuration() > 0 and pUnit.baseCombatStr() <= caster.baseCombatStr() * 2 and bUnit and pUnit.getUnitType() != gc.getInfoTypeForString('UNIT_PUPPET') ):
+          if ( pUnit.getDuration() < iDuration ):
+            pBestUnit = pUnit
+            iDuration = pUnit.getDuration()
+
+      if pBestUnit != -1:
+        iXP = int( pBestUnit.getExperience() / 2 )
+        caster.setExperience( caster.getExperience() + iXP, -1 )
+        pBestUnit.kill(True, 0)
+    
   def pay(self, pCity, sBuilding, iCost, iPlayer, sDesc):
     ## Load City Stock
     strSetData = cPickle.loads(pCity.getScriptData())
@@ -1345,6 +1396,9 @@ class CustomFunctions:
       if(i>300):
         iUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_POISONOUS'), True)
 
+    if ( iUnit.getUnitCombatType() == gc.getInfoTypeForString('UNITCOMBAT_ANIMAL') and self.bTechExist('TECH_FERAL_BOND') ):
+      iUnit.setHasPromotion( gc.getInfoTypeForString('PROMOTION_DIRE'), True )
+
     if (iUnit.getUnitCombatType() != gc.getInfoTypeForString('UNITCOMBAT_ANIMAL') and iUnit.getUnitCombatType() != gc.getInfoTypeForString('UNITCOMBAT_NAVAL') and iUnit.getUnitType() != gc.getInfoTypeForString('UNIT_SEA_SERPENT') and iUnit.getUnitType() != gc.getInfoTypeForString('UNIT_GIANT_SEA_SERPENT')):
       if iUnit.getUnitCombatType() == gc.getInfoTypeForString('UNITCOMBAT_ADEPT'):
         iSphere = CyGame().getSorenRandNum(9, "SphereSelect")       
@@ -1725,13 +1779,13 @@ class CustomFunctions:
     if i < 9:
       return ''
     if i < 12:
-      return 'large'
+      return 'troubling'
     if i < 15:
-      return 'very large'
+      return 'large'
     if i < 20:
-      return 'extremely large'
-    if i < 30:
       return 'citywide'
+    if i < 30:
+      return 'regional'
     if i < 50:
       return 'nationwide'
 
@@ -3068,13 +3122,13 @@ class CustomFunctions:
           ## Computer vassal states occasionally give their masters units
           if not pPlayer.isHuman() and pTeam.isAVassal() and pCity.getPopulation() > CyGame().getSorenRandNum(100, "Vassal Gift Unit") and pPlayer.getNumMilitaryUnits() > pPlayer.getNumCities() * 3:
             py = PyPlayer(pCity.getOwner())
+            imPlayer = pTeam.getLeaderID()
+            mPlayer = gc.getPlayer(imPlayer)
             sMsg = pPlayer.getName() + ' wants to send a unit to serve their master...'
             CyInterface().addCombatMessage(imPlayer,sMsg)
             CyInterface().addMessage(imPlayer,false,25,sMsg,'AS2D_GOODY_GOLD',1,pUnit.getButton(),ColorTypes(8),pUnit.getX(),pUnit.getY(),True,True)
             for pUnit in py.getUnitList():
               if isWorldUnitClass(pUnit.getUnitClassType()) == False:
-                imPlayer = pTeam.getLeaderID()
-                mPlayer = gc.getPlayer(imPlayer)
                 sMsg = pPlayer.getName() + ' sends ' + pUnit.getName() + 's from ' + pCity.getName() + ' to serve the great ' + mPlayer.getName() + '...'
                 CyInterface().addCombatMessage(imPlayer,sMsg)
                 CyInterface().addMessage(imPlayer,false,25,sMsg,'AS2D_GOODY_GOLD',1,pUnit.getButton(),ColorTypes(8),pUnit.getX(),pUnit.getY(),True,True)
@@ -3334,7 +3388,7 @@ class CustomFunctions:
           pUnit.setHasCasted(True)
 
         ## Units which can sustain units try if they have done nothing else this turn.  
-        if pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_SUMMONING')) and not pUnit.isHasCasted() and self.reqSustain(pUnit):
+        if pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_SUMMONER')) and pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_DIMENSIONAL1')) and not pUnit.isHasCasted() and self.reqSustain(pUnit):
           self.spellSustain(pUnit)
           pUnit.setHasCasted(True)
 
@@ -4259,7 +4313,8 @@ class CustomFunctions:
     pBestCity3 = -1
     for iPlayer in range(gc.getMAX_PLAYERS()):
       pPlayer = gc.getPlayer(iPlayer)
-      if (pPlayer.isAlive() and pPlayer.getCivilizationType() != iInfernal):
+      pTeam = gc.getTeam(pPlayer.getTeam())
+      if ( pPlayer.isAlive() and pPlayer.getCivilizationType() != iInfernal and iPlayer != pTeam.getLeaderID() ):
         for pyCity in PyPlayer(iPlayer).getCityList():
           pCity = pyCity.GetCy()
           if (pCity.isHasReligion(iVeil) and pCity.isCapital() == False):

@@ -364,7 +364,7 @@
         </TechInfo>
         <TechInfo>
             <Type>TECH_ANIMAL_MASTERY</Type>
-            <Description>TXT_KEY_TECH_ANIMAL_MASTERY</Description>
+            <Description>Beast Mastery</Description>
             <Civilopedia>TXT_KEY_TECH_PLACEHOLDER_PEDIA</Civilopedia>
             <Help></Help>
             <Strategy></Strategy>

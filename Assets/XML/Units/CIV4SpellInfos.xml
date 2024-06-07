@@ -2100,7 +2100,7 @@
             <PromotionPrereq1>PROMOTION_DEATH3</PromotionPrereq1>
             <PromotionPrereq2>PROMOTION_CHANNELING3</PromotionPrereq2>
             <bAllowAI>1</bAllowAI>
-            <bDisplayWhenDisabled>1</bDisplayWhenDisabled>
+            <bDisplayWhenDisabled>0</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
             <AddPromotionType1>PROMOTION_UNDEAD</AddPromotionType1>
             <bBuffCasterOnly>1</bBuffCasterOnly>
@@ -2812,8 +2812,9 @@
             <iCasterMinLevel>2</iCasterMinLevel>
             <bHasCasted>1</bHasCasted>
             <bAbility>1</bAbility>
-            <bSacrificeCaster>1</bSacrificeCaster>
+            <bSacrificeCaster>0</bSacrificeCaster>
             <PyResult>spellSacrificeAltar(pCaster)</PyResult>
+            <PyRequirement>reqSacrificeAltar(pCaster)</PyRequirement>
             <Effect>EFFECT_SACRIFICE</Effect>
             <Sound>AS3D_SPELL_SACRIFICE</Sound>
             <Button>Art/Interface/Buttons/Spells/Sacrifice.dds</Button>
@@ -6176,7 +6177,7 @@
             <PyResult></PyResult>
             <PyRequirement>reqNoBuilding(pCaster,'BUILDING_TREASURE1')</PyRequirement>
             <Effect>EFFECT_SPELL1</Effect>
-            <Sound>AS3D_SPELL_TRAIN</Sound>
+            <Sound>AS2D_GOODY_GOLD</Sound>
             <HotKey></HotKey>
             <bAltDown>0</bAltDown>
             <bShiftDown>0</bShiftDown>
@@ -6251,7 +6252,7 @@
             <PyResult>spellTakeEquipment(pCaster,'EQUIPMENT_TREASURE1')</PyResult>
             <PyRequirement>reqTakeEquipment(pCaster,'EQUIPMENT_TREASURE1')</PyRequirement>
             <Effect></Effect>
-            <Sound></Sound>
+            <Sound>AS2D_GOODY_GOLD</Sound>
             <HotKey></HotKey>
             <bAltDown>0</bAltDown>
             <bShiftDown>0</bShiftDown>
@@ -6326,7 +6327,7 @@
             <PyResult></PyResult>
             <PyRequirement>reqNoBuilding(pCaster,'BUILDING_TREASURE2')</PyRequirement>
             <Effect></Effect>
-            <Sound></Sound>
+            <Sound>AS2D_GOODY_GOLD</Sound>
             <HotKey></HotKey>
             <bAltDown>0</bAltDown>
             <bShiftDown>0</bShiftDown>
@@ -6401,7 +6402,7 @@
             <PyResult>spellTakeEquipment(pCaster,'EQUIPMENT_TREASURE2')</PyResult>
             <PyRequirement>reqTakeEquipment(pCaster,'EQUIPMENT_TREASURE2')</PyRequirement>
             <Effect></Effect>
-            <Sound></Sound>
+            <Sound>AS2D_GOODY_GOLD</Sound>
             <HotKey></HotKey>
             <bAltDown>0</bAltDown>
             <bShiftDown>0</bShiftDown>
@@ -6476,7 +6477,7 @@
             <PyResult></PyResult>
             <PyRequirement>reqNoBuilding(pCaster,'BUILDING_TREASURE3')</PyRequirement>
             <Effect></Effect>
-            <Sound></Sound>
+            <Sound>AS2D_GOODY_GOLD</Sound>
             <HotKey></HotKey>
             <bAltDown>0</bAltDown>
             <bShiftDown>0</bShiftDown>
@@ -6551,7 +6552,7 @@
             <PyResult>spellTakeEquipment(pCaster,'EQUIPMENT_TREASURE3')</PyResult>
             <PyRequirement>reqTakeEquipment(pCaster,'EQUIPMENT_TREASURE3')</PyRequirement>
             <Effect></Effect>
-            <Sound></Sound>
+            <Sound>AS2D_GOODY_GOLD</Sound>
             <HotKey></HotKey>
             <bAltDown>0</bAltDown>
             <bShiftDown>0</bShiftDown>
@@ -7834,11 +7835,11 @@
         <SpellInfo>
             <Type>SPELL_SUSTAIN_SUMMON</Type>
             <Description>Sustain Summon</Description>
-            <Civilopedia>Sustains a summoned unit.  The caster must have at least half as much strength as the unit to be sustained.</Civilopedia>
+            <Civilopedia></Civilopedia>
             <Strategy>NONE</Strategy>
-            <Help>[ICON_BULLET]Sustains a summoned unit.  The caster must have at least half as much strength as the unit to be sustained.</Help>
-            <PromotionPrereq1>PROMOTION_SUMMONING</PromotionPrereq1>
-            <PromotionPrereq2>NONE</PromotionPrereq2>
+            <Help>[ICON_BULLET]Sustains a summoned unit.[NEWLINE][ICON_BULLET]The caster must have at least half as much strength as the unit to be sustained.</Help>
+            <PromotionPrereq1>PROMOTION_SUMMONER</PromotionPrereq1>
+            <PromotionPrereq2>PROMOTION_DIMENSIONAL1</PromotionPrereq2>
             <UnitPrereq>NONE</UnitPrereq>
             <UnitClassPrereq>NONE</UnitClassPrereq>
             <UnitCombatPrereq>NONE</UnitCombatPrereq>
@@ -7904,6 +7905,80 @@
             <bGraphicalOnly>0</bGraphicalOnly>
             <iHotKeyPriority>0</iHotKeyPriority>
             <Button>Art/Interface/Buttons/Promotions/Unholytaint.dds</Button>
+        </SpellInfo>
+        <SpellInfo>
+            <Type>SPELL_UNSUMMON</Type>
+            <Description>Unsummon</Description>
+            <Civilopedia></Civilopedia>
+            <Strategy>NONE</Strategy>
+            <Help>[ICON_BULLET]Unsummons a summoned unit.[NEWLINE][ICON_BULLET]The caster must have at least half as much strength as the unit to be unsummoned.[NEWLINE][ICON_BULLET]The caster gains half the xp of the summoned unit, rounded down.</Help>
+            <PromotionPrereq1>PROMOTION_SUMMONING</PromotionPrereq1>
+            <PromotionPrereq2>PROMOTION_DIMENSIONAL2</PromotionPrereq2>
+            <UnitPrereq>NONE</UnitPrereq>
+            <UnitClassPrereq>NONE</UnitClassPrereq>
+            <UnitCombatPrereq>NONE</UnitCombatPrereq>
+            <UnitInStackPrereq>NONE</UnitInStackPrereq>
+            <CivilizationPrereq>NONE</CivilizationPrereq>
+            <ReligionPrereq>NONE</ReligionPrereq>
+            <StateReligionPrereq>NONE</StateReligionPrereq>
+            <TechPrereq>NONE</TechPrereq>
+            <bAllowAI>0</bAllowAI>
+            <bAdjacentToWaterOnly>0</bAdjacentToWaterOnly>
+            <bCausesWar>0</bCausesWar>
+            <bGlobal>0</bGlobal>
+            <bInBordersOnly>0</bInBordersOnly>
+            <bInCityOnly>0</bInCityOnly>
+            <iAIWeight>0</iAIWeight>
+            <bDisplayWhenDisabled>0</bDisplayWhenDisabled>
+            <bHasCasted>1</bHasCasted>
+            <bIgnoreHasCasted>0</bIgnoreHasCasted>
+            <bResistable>0</bResistable>
+            <iRange>0</iRange>
+            <iResistModify>0</iResistModify>
+            <iDamage>0</iDamage>
+            <iDamageLimit>0</iDamageLimit>
+            <DamageType>NONE</DamageType>
+            <AddPromotionType1>NONE</AddPromotionType1>
+            <AddPromotionType2>NONE</AddPromotionType2>
+            <AddPromotionType3>NONE</AddPromotionType3>
+            <RemovePromotionType1>NONE</RemovePromotionType1>
+            <RemovePromotionType2>NONE</RemovePromotionType2>
+            <RemovePromotionType3>NONE</RemovePromotionType3>
+            <bBuffCasterOnly>0</bBuffCasterOnly>
+            <ConvertUnitType>NONE</ConvertUnitType>
+            <CreateBuildingType>NONE</CreateBuildingType>
+            <CreateFeatureType>NONE</CreateFeatureType>
+            <CreateImprovementType>NONE</CreateImprovementType>
+            <SpreadReligion>NONE</SpreadReligion>
+            <CreateUnitType>NONE</CreateUnitType>
+            <iCreateUnitNum>0</iCreateUnitNum>
+            <bPermanentUnitCreate>0</bPermanentUnitCreate>
+            <CreateUnitPromotion>NONE</CreateUnitPromotion>
+            <bImmuneTeam>0</bImmuneTeam>
+            <bImmuneNeutral>0</bImmuneNeutral>
+            <bImmuneEnemy>0</bImmuneEnemy>
+            <bImmuneFlying>0</bImmuneFlying>
+            <bImmuneNotAlive>0</bImmuneNotAlive>
+            <bDispel>0</bDispel>
+            <bPush>0</bPush>
+            <bRemoveHasCasted>0</bRemoveHasCasted>
+            <bSacrificeCaster>0</bSacrificeCaster>
+            <iChangePopulation>0</iChangePopulation>
+            <iCost>0</iCost>
+            <iImmobileTurns>0</iImmobileTurns>
+            <iMiscastChance>0</iMiscastChance>
+            <PyMiscast></PyMiscast>
+            <PyResult>spellUnsummon(pCaster)</PyResult>
+            <PyRequirement>reqSustain(pCaster)</PyRequirement>
+            <Effect>EFFECT_ENTROPY_SUMMON</Effect>
+            <Sound>AS3D_BALOR_SELECT</Sound>
+            <HotKey></HotKey>
+            <bAltDown>0</bAltDown>
+            <bShiftDown>0</bShiftDown>
+            <bCtrlDown>0</bCtrlDown>
+            <bGraphicalOnly>0</bGraphicalOnly>
+            <iHotKeyPriority>0</iHotKeyPriority>
+            <Button>Art/Interface/Buttons/Improvements/Portal.dds</Button>
         </SpellInfo>
         <SpellInfo>
             <Type>SPELL_AWAKEN_CREEP</Type>
@@ -8584,14 +8659,14 @@
         <SpellInfo>
             <Type>SPELL_LEARN_MAGIC</Type>
             <Description>Study at the Library</Description>
-            <Civilopedia>Allows a mage to gain a free promotion for 50gp times their channeling level plus 50gp.  This also depletes the library's supply by half the cost.</Civilopedia>
+            <Civilopedia></Civilopedia>
             <Strategy>NONE</Strategy>
-            <Help>[ICON_BULLET]Allows a mage to gain a free promotion for 50gp times their channeling level plus 50gp.  This also depletes the library's supply by half the cost.</Help>
+            <Help>[ICON_BULLET]Arcane units and nobles may study here for extra promotions.  This requires 50gp + 50 x channeling level or 100gp for non-arcane nobles.  Stock is depleted by half the gold cost.</Help>
             <PromotionPrereq1>NONE</PromotionPrereq1>
             <PromotionPrereq2>NONE</PromotionPrereq2>
             <UnitPrereq>NONE</UnitPrereq>
             <UnitClassPrereq>NONE</UnitClassPrereq>
-            <UnitCombatPrereq>UNITCOMBAT_ADEPT</UnitCombatPrereq>
+            <UnitCombatPrereq>NONE</UnitCombatPrereq>
             <UnitInStackPrereq>NONE</UnitInStackPrereq>
             <CivilizationPrereq>NONE</CivilizationPrereq>
             <ReligionPrereq>NONE</ReligionPrereq>
@@ -11854,7 +11929,7 @@
             <PyResult>spellTakeEquipment(pCaster,'EQUIPMENT_IMPROVED_WEAPONS')</PyResult>
             <PyRequirement>reqTakeEquipment(pCaster,'EQUIPMENT_IMPROVED_WEAPONS')</PyRequirement>
             <Effect></Effect>
-            <Sound></Sound>
+            <Sound>AS2D_SOMNIUM_CLICK</Sound>
             <HotKey></HotKey>
             <bAltDown>0</bAltDown>
             <bShiftDown>0</bShiftDown>
