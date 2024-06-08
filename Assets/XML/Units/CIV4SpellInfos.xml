@@ -1224,7 +1224,7 @@
             <Description>Teleport</Description>
             <Civilopedia></Civilopedia>
             <Strategy>NONE</Strategy>
-            <Help>[ICON_BULLET]Teleport the caster and potentially passengers to a teleportal created by another mage or, if none exists, the capital city.[NEWLINE][ICON_BULLET]You may not teleport if charmed.[NEWLINE][ICON_BULLET]The caster can teleport passengers equal to 1/4, 1/2 or equal to his level based on what level of dimensional training he has.[NEWLINE][ICON_BULLET]The safe range for a teleport is the level of the caster x ( dimensional promotions + dimensional mana ) x 2 for spell extension x 2 for spell extension 2.  5% damage per range for caster and passengers above that or the teleport may fail.</Help>
+            <Help>[ICON_BULLET]Teleport the caster to the capital city.[NEWLINE][ICON_BULLET]Dimensional II allows teleporting to a teleportal created by another mage.[NEWLINE][ICON_BULLET]Dimensional II and III combined with Channeling II and III respectively allow passengers equal to 1/3 level (II) or full level (III).[NEWLINE][ICON_BULLET]You may not teleport if charmed.[NEWLINE][ICON_BULLET]The safe range for a teleport is the level of the caster x ( dimensional promotions + dimensional mana ) x 2 for spell extension x 2 for spell extension 2.  5% damage per range for caster and passengers above that or the teleport may fail.</Help>
             <PromotionPrereq1>PROMOTION_DIMENSIONAL1</PromotionPrereq1>
             <PromotionPrereq2>PROMOTION_CHANNELING1</PromotionPrereq2>
             <UnitPrereq>NONE</UnitPrereq>
@@ -2815,8 +2815,8 @@
             <bSacrificeCaster>0</bSacrificeCaster>
             <PyResult>spellSacrificeAltar(pCaster)</PyResult>
             <PyRequirement>reqSacrificeAltar(pCaster)</PyRequirement>
-            <Effect>EFFECT_SACRIFICE</Effect>
-            <Sound>AS3D_SPELL_SACRIFICE</Sound>
+            <Effect>EFFECT_WRAITH_SUMMON</Effect>
+            <Sound>AS3D_SPELL_WRAITH</Sound>
             <Button>Art/Interface/Buttons/Spells/Sacrifice.dds</Button>
         </SpellInfo>
         <SpellInfo>
@@ -2965,7 +2965,7 @@
             <Type>SPELL_SLAVE_COMPEL</Type>
             <Description>Force Prisoner to Work</Description>
             <Civilopedia>TXT_KEY_SPELL_PLACEHOLDER_PEDIA</Civilopedia>
-            <Help>TXT_KEY_SPELL_SLAVE_TRADE_BUY_HELP</Help>
+            <Help>[ICON_BULLET]Produces a Slave unit[NEWLINE][ICON_BULLET]May be used every 300/pop turns</Help>
             <bInBordersOnly>1</bInBordersOnly>
             <bInCityOnly>1</bInCityOnly>
             <bHasCasted>1</bHasCasted>
@@ -7838,7 +7838,7 @@
             <Civilopedia></Civilopedia>
             <Strategy>NONE</Strategy>
             <Help>[ICON_BULLET]Sustains a summoned unit.[NEWLINE][ICON_BULLET]The caster must have at least half as much strength as the unit to be sustained.</Help>
-            <PromotionPrereq1>PROMOTION_SUMMONER</PromotionPrereq1>
+            <PromotionPrereq1>PROMOTION_SUMMONING</PromotionPrereq1>
             <PromotionPrereq2>PROMOTION_DIMENSIONAL1</PromotionPrereq2>
             <UnitPrereq>NONE</UnitPrereq>
             <UnitClassPrereq>NONE</UnitClassPrereq>
@@ -7911,7 +7911,7 @@
             <Description>Unsummon</Description>
             <Civilopedia></Civilopedia>
             <Strategy>NONE</Strategy>
-            <Help>[ICON_BULLET]Unsummons a summoned unit.[NEWLINE][ICON_BULLET]The caster must have at least half as much strength as the unit to be unsummoned.[NEWLINE][ICON_BULLET]The caster gains half the xp of the summoned unit, rounded down.</Help>
+            <Help>[ICON_BULLET]Unsummons a summoned unit.[NEWLINE][ICON_BULLET]The caster must have at least half as much strength as the unit to be unsummoned.[NEWLINE][ICON_BULLET]The caster gains half the xp of the summoned unit, rounded down or the full value if he has Dimensional III.</Help>
             <PromotionPrereq1>PROMOTION_SUMMONING</PromotionPrereq1>
             <PromotionPrereq2>PROMOTION_DIMENSIONAL2</PromotionPrereq2>
             <UnitPrereq>NONE</UnitPrereq>

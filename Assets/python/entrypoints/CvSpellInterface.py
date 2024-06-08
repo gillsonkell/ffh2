@@ -1249,8 +1249,9 @@ def spellExploreLair(caster):
 
 def spellExploreLairEpic(caster):
   pPlot = caster.plot()
-  iRnd = CyGame().getSorenRandNum(100, "Find Lair") + caster.getLevel() + cf.retSearch(caster) * 2
-  if iRnd > 70:
+  iSkill = caster.getLevel() + cf.retSearch(caster) * 2
+  iRnd = CyGame().getSorenRandNum(100, "Find Lair") + iSkill
+  if iRnd > 104:
     iRnd = CyGame().getSorenRandNum(100, "Explore Lair") + caster.getLevel() + caster.baseCombatStr() + cf.retSearch(caster) * 3
     iDestroyLair = 0
     if iRnd < 54:
@@ -1264,7 +1265,7 @@ def spellExploreLairEpic(caster):
       
     caster.changeExperience(4, -1, false, false, false)
   else:
-    CyInterface().addMessage(caster.getOwner(),False,25,'Your ' + caster.getName() + ' fails to find anything special here...','AS2D_POSITIVE_DINK',1,'Art/Interface/Buttons/Spells/Explore Lair.dds',ColorTypes(8),pPlot.getX(),pPlot.getY(),True,True)
+    CyInterface().addMessage(caster.getOwner(),False,25,'Your ' + caster.getName() + ' fails to find anything special here... Roll (d100+'+str(iSkill)+' vs 104): '+str(iRnd),'AS2D_POSITIVE_DINK',1,'Art/Interface/Buttons/Spells/Explore Lair.dds',ColorTypes(8),pPlot.getX(),pPlot.getY(),True,True)
     
   caster.finishMoves()
 
@@ -4458,7 +4459,7 @@ def spellTeleport(caster,loc):
   itx = pCity.getX()
   ity = pCity.getY()
 
-  if loc == 'Teleportal':
+  if loc == 'Teleportal' and caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_DIMENSIONAL2')):
     py = PyPlayer(player)
     for pUnit in py.getUnitList():
       if pUnit.getUnitType() == gc.getInfoTypeForString('UNIT_MAGIC_MISSILE') and pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_DIMENSIONAL1')):
@@ -4472,9 +4473,9 @@ def spellTeleport(caster,loc):
   iRange = cf.retDistance(itx,ity,caster.getX(),caster.getY())
   iSafeMult = 1 + iDim
 
-  iPassengers = caster.getLevel() / 4
+  iPassengers = 0
   if (caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_DIMENSIONAL2')) and caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_CHANNELING2'))):
-    iPassengers = caster.getLevel() / 2
+    iPassengers = caster.getLevel() / 3
   if (caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_DIMENSIONAL3')) and caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_CHANNELING3'))):
     iPassengers = caster.getLevel()
 

@@ -978,7 +978,10 @@ class CustomFunctions:
             iDuration = pUnit.getDuration()
 
       if pBestUnit != -1:
-        iXP = int( pBestUnit.getExperience() / 2 )
+        iDiv = 2
+        if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_DIMENSIONAL3')):
+          iDiv = 1
+        iXP = int( pBestUnit.getExperience() / iDiv )
         caster.setExperience( caster.getExperience() + iXP, -1 )
         pBestUnit.kill(True, 0)
     
@@ -3726,9 +3729,10 @@ class CustomFunctions:
           
         ## Living units that fly take endurance damage
         if pPlayer.isHuman() and (pUnit.isAlive() or pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_ANGEL'))) and pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_FLYING')):
-          CyInterface().addMessage(pUnit.getOwner(),false,25,'Your '+pUnit.getName()+' is flying and taking 10 endurance damage...','',1,'Art/Interface/Buttons/Promotions/flying.dds',ColorTypes(7),pUnit.getX(),pUnit.getY(),True,True)
-          CyInterface().addCombatMessage(pUnit.getOwner(),'Your '+pUnit.getName()+' is flying and taking 10 endurance damage...')
-          pUnit.changeDamage( 10, pUnit.getOwner() ) 
+          iDam = CyGame().getSorenRandNum(16, "Flying Fatigue") + 3 - pUnit.getLevel()
+          CyInterface().addMessage(pUnit.getOwner(),false,25,'Your '+pUnit.getName()+' is flying and taking ' + str(iDam) + ' endurance damage... (3d6-level)','',1,'Art/Interface/Buttons/Promotions/flying.dds',ColorTypes(7),pUnit.getX(),pUnit.getY(),True,True)
+          CyInterface().addCombatMessage(pUnit.getOwner(),'Your '+pUnit.getName()+' is flying and taking ' + str(iDam) + ' endurance damage... (3d6-level)')
+          pUnit.changeDamage( iDam, pUnit.getOwner() ) 
               
         ## Vessels can take damage from dangerous seas
         if pPlayer.isHuman() and iTerrain == iOcean and ( not pPlot.isOwned() or pPlot.getOwner() != pUnit.getOwner()):

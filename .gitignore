@@ -10,4 +10,7 @@
 !Assets/xml/
 !Assets/xml/**
 
+!Assets/Art/Interface/Buttons/Promotions/
+!Assets/Art/Interface/Buttons/Promotions/**
+
 !Assets/CvGameCoreDLL.dll
