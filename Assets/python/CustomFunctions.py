@@ -959,31 +959,26 @@ class CustomFunctions:
       pBestUnit.setDuration( iDuration + iSustain )
     
   def spellUnsummon(self, caster):
-    iSustain = 1
     bPlayer = gc.getPlayer(caster.getOwner())
-    if bPlayer.hasTrait(gc.getInfoTypeForString('TRAIT_SUMMONER')):
-      iSustain = 2
-    iDuration = 99
     pBestUnit = -1
+    iDuration = 99
     pPlot = caster.plot()
-    for ii in range(iSustain):
-      for i in range(pPlot.getNumUnits()):
-        pUnit = pPlot.getUnit(i)
-        bUnit = True
-        if ( pUnit.getUnitType() == gc.getInfoTypeForString('UNIT_MAGIC_MISSILE') or pUnit.getUnitType() == gc.getInfoTypeForString('UNIT_FIREBALL') or pUnit.getUnitType() == gc.getInfoTypeForString('UNIT_METEOR') ):
-          bUnit = False
-        if ( pUnit.getDuration() > 0 and pUnit.baseCombatStr() <= caster.baseCombatStr() * 2 and bUnit and pUnit.getUnitType() != gc.getInfoTypeForString('UNIT_PUPPET') ):
-          if ( pUnit.getDuration() < iDuration ):
-            pBestUnit = pUnit
-            iDuration = pUnit.getDuration()
+    for i in range(pPlot.getNumUnits()):
+      pUnit = pPlot.getUnit(i)
+      bUnit = True
+      if ( pUnit.getUnitType() == gc.getInfoTypeForString('UNIT_MAGIC_MISSILE') or pUnit.getUnitType() == gc.getInfoTypeForString('UNIT_FIREBALL') or pUnit.getUnitType() == gc.getInfoTypeForString('UNIT_METEOR') ):
+        bUnit = False
+      if ( pUnit.getDuration() > 0 and pUnit.baseCombatStr() <= caster.baseCombatStr() * 2 and bUnit and pUnit.getUnitType() != gc.getInfoTypeForString('UNIT_PUPPET') ):
+        if ( pUnit.getDuration() < iDuration ):
+          pBestUnit = pUnit
+          iDuration = pUnit.getDuration()
 
-      if pBestUnit != -1:
-        iDiv = 2
-        if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_DIMENSIONAL3')):
-          iDiv = 1
-        iXP = int( pBestUnit.getExperience() / iDiv )
-        caster.setExperience( caster.getExperience() + iXP, -1 )
-        pBestUnit.kill(True, 0)
+    if pBestUnit != -1:
+      iXP = int( pBestUnit.getExperience() / 2 )
+      if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_DIMENSIONAL3')):
+        iXP = pBestUnit.getExperience()
+      caster.changeExperience(iXP, -1, false, false, false)
+      pBestUnit.kill(True, 0)
     
   def pay(self, pCity, sBuilding, iCost, iPlayer, sDesc):
     ## Load City Stock
@@ -3730,9 +3725,10 @@ class CustomFunctions:
         ## Living units that fly take endurance damage
         if pPlayer.isHuman() and (pUnit.isAlive() or pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_ANGEL'))) and pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_FLYING')):
           iDam = CyGame().getSorenRandNum(16, "Flying Fatigue") + 3 - pUnit.getLevel()
-          CyInterface().addMessage(pUnit.getOwner(),false,25,'Your '+pUnit.getName()+' is flying and taking ' + str(iDam) + ' endurance damage... (3d6-level)','',1,'Art/Interface/Buttons/Promotions/flying.dds',ColorTypes(7),pUnit.getX(),pUnit.getY(),True,True)
-          CyInterface().addCombatMessage(pUnit.getOwner(),'Your '+pUnit.getName()+' is flying and taking ' + str(iDam) + ' endurance damage... (3d6-level)')
-          pUnit.changeDamage( iDam, pUnit.getOwner() ) 
+          if iDam > 0:
+            CyInterface().addMessage(pUnit.getOwner(),false,25,'Your '+pUnit.getName()+' is flying and taking ' + str(iDam) + ' endurance damage... (3d6-level)','',1,'Art/Interface/Buttons/Promotions/flying.dds',ColorTypes(7),pUnit.getX(),pUnit.getY(),True,True)
+            CyInterface().addCombatMessage(pUnit.getOwner(),'Your '+pUnit.getName()+' is flying and taking ' + str(iDam) + ' endurance damage... (3d6-level)')
+            pUnit.changeDamage( iDam, pUnit.getOwner() ) 
               
         ## Vessels can take damage from dangerous seas
         if pPlayer.isHuman() and iTerrain == iOcean and ( not pPlot.isOwned() or pPlot.getOwner() != pUnit.getOwner()):

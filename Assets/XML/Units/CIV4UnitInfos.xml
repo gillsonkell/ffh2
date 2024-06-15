@@ -13694,7 +13694,7 @@
             <DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
             <Invisible>NONE</Invisible>
             <SeeInvisible>NONE</SeeInvisible>
-            <Description></Description>
+            <Description>Azer</Description>
             <Civilopedia>TXT_KEY_UNIT_PLACEHOLDER_PEDIA</Civilopedia>
             <Strategy></Strategy>
             <Advisor>ADVISOR_MILITARY</Advisor>
@@ -69895,7 +69895,7 @@
             <DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
             <Invisible>NONE</Invisible>
             <SeeInvisible>NONE</SeeInvisible>
-            <Description>Large Black Pudding</Description>
+            <Description>Large Black Slime</Description>
             <Civilopedia>TXT_KEY_UNIT_TAR_DEMON_PEDIA</Civilopedia>
             <Strategy>TXT_KEY_UNIT_TAR_DEMON_STRATEGY</Strategy>
             <Advisor>ADVISOR_MILITARY</Advisor>
@@ -80817,7 +80817,7 @@
             <DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
             <Invisible>NONE</Invisible>
             <SeeInvisible>NONE</SeeInvisible>
-            <Description>Black Pudding</Description>
+            <Description>Black Slime</Description>
             <Civilopedia>TXT_KEY_UNIT_TAR_DEMON_PEDIA</Civilopedia>
             <Strategy></Strategy>
             <Advisor>ADVISOR_MILITARY</Advisor>
@@ -81088,7 +81088,7 @@
             <DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
             <Invisible>NONE</Invisible>
             <SeeInvisible>NONE</SeeInvisible>
-            <Description>Small Black Pudding</Description>
+            <Description>Small Black Slime</Description>
             <Civilopedia>TXT_KEY_UNIT_TAR_DEMON_PEDIA</Civilopedia>
             <Strategy></Strategy>
             <Advisor>ADVISOR_MILITARY</Advisor>

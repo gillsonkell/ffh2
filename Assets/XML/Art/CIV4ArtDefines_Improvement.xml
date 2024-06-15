@@ -702,7 +702,7 @@
 		<ImprovementArtInfo>
 			<Type>ART_DEF_IMPROVEMENT_TOWER</Type>
 			<bExtraAnimations>0</bExtraAnimations>
-			<fScale>1.0</fScale>
+			<fScale>1.25</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Lighthouse/Lighthouse.nif</NIF>
 			<KFM/>

@@ -1251,7 +1251,7 @@
             <iDamage>0</iDamage>
             <iDamageLimit>0</iDamageLimit>
             <DamageType>NONE</DamageType>
-            <AddPromotionType1>PROMOTION_CHARMED</AddPromotionType1>
+            <AddPromotionType1>NONE</AddPromotionType1>
             <AddPromotionType2>NONE</AddPromotionType2>
             <AddPromotionType3>NONE</AddPromotionType3>
             <RemovePromotionType1>NONE</RemovePromotionType1>
@@ -5313,7 +5313,7 @@
             <Type>SPELL_ESTATE1</Type>
             <Description>Reside in Estate</Description>
             <Civilopedia></Civilopedia>
-            <Help>[ICON_BULLET]+1 Gold, +1 Research, +1 Culture, +5% Gold, Research, Culture, -10% Maintenance</Help>
+            <Help>[ICON_BULLET]+1 Gold, +1 Research, +1 Culture, +5% Gold, Research, Culture, -10% Maintenance[NEWLINE][ICON_BULLET]Builder gains 1 xp</Help>
             <PromotionPrereq1>PROMOTION_ESTATES1</PromotionPrereq1>
             <bAllowAI>1</bAllowAI>
             <bAdjacentToWaterOnly>0</bAdjacentToWaterOnly>
@@ -5349,7 +5349,7 @@
             <iDelay>5</iDelay>
             <iMiscastChance>0</iMiscastChance>
             <PyMiscast></PyMiscast>
-            <PyResult></PyResult>
+            <PyResult>giveXP(pCaster,1)</PyResult>
             <PyRequirement>reqNobleBuilding(pCaster,'BUILDING_ESTATE1','Est1')</PyRequirement>
             <Effect>EFFECT_CREATION</Effect>
             <Sound>AS3D_SPELL_REPAIR</Sound>
@@ -5366,7 +5366,7 @@
             <Description>Establish Estate Grounds</Description>
             <Civilopedia>NONE</Civilopedia>
             <Strategy>NONE</Strategy>
-            <Help>[ICON_BULLET]+2 Food, +20% Gold, -10% Maintenance</Help>
+            <Help>[ICON_BULLET]+2 Food, +20% Gold, -10% Maintenance[NEWLINE][ICON_BULLET]Builder gains 2 xp</Help>
             <PromotionPrereq1>PROMOTION_ESTATES2</PromotionPrereq1>
             <PromotionPrereq2>NONE</PromotionPrereq2>
             <UnitPrereq>NONE</UnitPrereq>
@@ -5424,7 +5424,7 @@
             <iDelay>8</iDelay>
             <iMiscastChance>0</iMiscastChance>
             <PyMiscast></PyMiscast>
-            <PyResult></PyResult>
+            <PyResult>giveXP(pCaster,2)</PyResult>
             <PyRequirement>reqNobleBuilding(pCaster,'BUILDING_ESTATE2','Est2')</PyRequirement>
             <Effect>EFFECT_CREATION</Effect>
             <Sound>AS3D_SPELL_REPAIR</Sound>
@@ -5441,7 +5441,7 @@
             <Description>Open the Banquest Hall</Description>
             <Civilopedia>NONE</Civilopedia>
             <Strategy>NONE</Strategy>
-            <Help>[ICON_BULLET]+20% Food, +25% Gold, Allows 1 Artist, -20% Maintenance</Help>
+            <Help>[ICON_BULLET]+20% Food, +25% Gold, Allows 1 Artist, -20% Maintenance[NEWLINE][ICON_BULLET]Builder gains 3 xp</Help>
             <PromotionPrereq1>PROMOTION_ESTATES3</PromotionPrereq1>
             <PromotionPrereq2>NONE</PromotionPrereq2>
             <UnitPrereq>NONE</UnitPrereq>
@@ -5499,7 +5499,7 @@
             <iDelay>12</iDelay>
             <iMiscastChance>0</iMiscastChance>
             <PyMiscast></PyMiscast>
-            <PyResult></PyResult>
+            <PyResult>giveXP(pCaster,3)</PyResult>
             <PyRequirement>reqNobleBuilding(pCaster,'BUILDING_ESTATE3','Est3')</PyRequirement>
             <Effect>EFFECT_CREATION</Effect>
             <Sound>AS3D_SPELL_REPAIR</Sound>
@@ -5516,7 +5516,7 @@
             <Description>Open the Manor</Description>
             <Civilopedia></Civilopedia>
             <Strategy>NONE</Strategy>
-            <Help>[ICON_BULLET]+1 Production, +10% Production</Help>
+            <Help>[ICON_BULLET]+1 Production, +10% Production[NEWLINE][ICON_BULLET]Builder gains 1 xp</Help>
             <PromotionPrereq1>PROMOTION_GOVERNOR1</PromotionPrereq1>
             <PromotionPrereq2>NONE</PromotionPrereq2>
             <UnitPrereq>NONE</UnitPrereq>
@@ -5574,7 +5574,7 @@
             <iDelay>5</iDelay>
             <iMiscastChance>0</iMiscastChance>
             <PyMiscast></PyMiscast>
-            <PyResult></PyResult>
+            <PyResult>giveXP(pCaster,1)</PyResult>
             <PyRequirement>reqNobleBuilding(pCaster,'BUILDING_GOV1','Gov1')</PyRequirement>
             <Effect>EFFECT_CREATION</Effect>
             <Sound>AS3D_SPELL_REPAIR</Sound>
@@ -5591,7 +5591,7 @@
             <Description>Build the Abby</Description>
             <Civilopedia>NONE</Civilopedia>
             <Strategy>NONE</Strategy>
-            <Help>[ICON_BULLET]+2 Production, +15% Production, +20% Culture, Allows 1 Priest</Help>
+            <Help>[ICON_BULLET]+2 Production, +15% Production, +20% Culture, Allows 1 Priest[NEWLINE][ICON_BULLET]Builder gains 2 xp</Help>
             <PromotionPrereq1>PROMOTION_GOVERNOR2</PromotionPrereq1>
             <PromotionPrereq2>NONE</PromotionPrereq2>
             <UnitPrereq>NONE</UnitPrereq>
@@ -5649,7 +5649,7 @@
             <iDelay>8</iDelay>
             <iMiscastChance>0</iMiscastChance>
             <PyMiscast></PyMiscast>
-            <PyResult></PyResult>
+            <PyResult>giveXP(pCaster,2)</PyResult>
             <PyRequirement>reqNobleBuilding(pCaster,'BUILDING_GOV2','Gov2')</PyRequirement>
             <Effect>EFFECT_CREATION</Effect>
             <Sound>AS3D_SPELL_REPAIR</Sound>
@@ -5666,7 +5666,7 @@
             <Description>Oversee the Governor's Workshop</Description>
             <Civilopedia>NONE</Civilopedia>
             <Strategy>NONE</Strategy>
-            <Help>[ICON_BULLET]+25% Production, Allows 1 Engineer</Help>
+            <Help>[ICON_BULLET]+25% Production, Allows 1 Engineer[NEWLINE][ICON_BULLET]Builder gains 3 xp</Help>
             <PromotionPrereq1>PROMOTION_GOVERNOR3</PromotionPrereq1>
             <PromotionPrereq2>NONE</PromotionPrereq2>
             <UnitPrereq>NONE</UnitPrereq>
@@ -5724,7 +5724,7 @@
             <iDelay>12</iDelay>
             <iMiscastChance>0</iMiscastChance>
             <PyMiscast></PyMiscast>
-            <PyResult></PyResult>
+            <PyResult>giveXP(pCaster,3)</PyResult>
             <PyRequirement>reqNobleBuilding(pCaster,'BUILDING_GOV3','Gov3')</PyRequirement>
             <Effect>EFFECT_CREATION</Effect>
             <Sound>AS3D_SPELL_REPAIR</Sound>
@@ -5741,7 +5741,7 @@
             <Description>Found a Command Post</Description>
             <Civilopedia>NONE</Civilopedia>
             <Strategy>NONE</Strategy>
-            <Help></Help>
+            <Help>[ICON_BULLET]Builder gains 3 xp</Help>
             <PromotionPrereq1>PROMOTION_NOBILITY</PromotionPrereq1>
             <PromotionPrereq2>PROMOTION_COMMANDER2</PromotionPrereq2>
             <UnitPrereq>NONE</UnitPrereq>
@@ -5799,7 +5799,7 @@
             <iDelay>7</iDelay>
             <iMiscastChance>0</iMiscastChance>
             <PyMiscast></PyMiscast>
-            <PyResult></PyResult>
+            <PyResult>giveXP(pCaster,3)</PyResult>
             <PyRequirement>reqNobleBuilding(pCaster,'BUILDING_COMMAND_POST','Com1')</PyRequirement>
             <Effect>EFFECT_CREATION</Effect>
             <Sound>AS3D_SPELL_REPAIR</Sound>
@@ -5816,7 +5816,7 @@
             <Description>Found a Military Academy</Description>
             <Civilopedia>NONE</Civilopedia>
             <Strategy>NONE</Strategy>
-            <Help></Help>
+            <Help>[ICON_BULLET]Builder gains 3 xp</Help>
             <PromotionPrereq1>PROMOTION_NOBILITY</PromotionPrereq1>
             <PromotionPrereq2>PROMOTION_COMMANDER3</PromotionPrereq2>
             <UnitPrereq>NONE</UnitPrereq>
@@ -5874,7 +5874,7 @@
             <iDelay>12</iDelay>
             <iMiscastChance>0</iMiscastChance>
             <PyMiscast></PyMiscast>
-            <PyResult></PyResult>
+            <PyResult>giveXP(pCaster,3)</PyResult>
             <PyRequirement>reqNobleBuilding(pCaster,'BUILDING_MILITARY_ACADEMY','Mil1')</PyRequirement>
             <Effect>EFFECT_CREATION</Effect>
             <Sound>AS3D_SPELL_REPAIR</Sound>
@@ -14118,6 +14118,27 @@
             <Button>Art/Interface/Buttons/Builds/BuildFarm.dds</Button>
         </SpellInfo>
         <SpellInfo>
+            <Type>SPELL_FOREST_WHISPER</Type>
+            <Description>Whisper to the trees</Description>
+            <Help>The elves talked to the trees, some say they came alive!</Help>
+            <PromotionPrereq1>PROMOTION_ELF</PromotionPrereq1>
+            <FeatureOrPrereq1>FEATURE_FOREST</FeatureOrPrereq1>
+            <ReligionPrereq></ReligionPrereq>
+            <bAllowAI>0</bAllowAI>
+            <bAllowAutomateTerrain>0</bAllowAutomateTerrain>
+            <bInBordersOnly>1</bInBordersOnly>
+            <bDisplayWhenDisabled>0</bDisplayWhenDisabled>
+            <bHasCasted>1</bHasCasted>
+            <bAbility>1</bAbility>
+            <CreateFeatureType>FEATURE_FOREST_ANCIENT</CreateFeatureType>
+            <iDelay>24</iDelay>
+            <PyResult>giveXP(pCaster,3)</PyResult>
+            <PyRequirement>reqWorkerType(pCaster)</PyRequirement>
+            <Effect>EFFECT_BLOOM</Effect>
+            <Sound>AS3D_SPELL_BLOOM</Sound>
+            <Button>Art/Interface/Buttons/Buildings/Grove.dds</Button>
+        </SpellInfo>
+        <SpellInfo>
             <Type>SPELL_WORKER_REPAIR</Type>
             <Description>Repair</Description>
             <Civilopedia>Repair Naval, Siege or (if dwarven) Golem units</Civilopedia>
@@ -14218,7 +14239,7 @@
         </SpellInfo>
         <SpellInfo>
             <Type>SPELL_CORONATE</Type>
-            <Description>Add this unit to the Nobility or Train Noble</Description>
+            <Description>Give this unit a noble title</Description>
             <Help>Cities with enough culture may add a unit to the nobility or train nobles with an extra promotion.  This also occurs at 1000, 4000, 9000, 16000, 25000, 36000 and 49000 culture.</Help>
             <bAllowAI>1</bAllowAI>
             <iAIWeightWar>50</iAIWeightWar>

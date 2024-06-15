@@ -54627,7 +54627,7 @@
             <bQuest>0</bQuest>
             <bGlobal>0</bGlobal>
             <bTeam>0</bTeam>
-            <bPickCity>0</bPickCity>
+            <bPickCity>1</bPickCity>
             <bPickOtherPlayerCity>0</bPickOtherPlayerCity>
             <bDeclareWar>0</bDeclareWar>
             <iGold>-45</iGold>
@@ -54728,10 +54728,10 @@
             <bQuest>0</bQuest>
             <bGlobal>0</bGlobal>
             <bTeam>0</bTeam>
-            <bPickCity>0</bPickCity>
+            <bPickCity>1</bPickCity>
             <bPickOtherPlayerCity>0</bPickOtherPlayerCity>
             <bDeclareWar>0</bDeclareWar>
-            <iGold>-175</iGold>
+            <iGold>-250</iGold>
             <bGoldToPlayer>0</bGoldToPlayer>
             <iRandomGold>0</iRandomGold>
             <iCulture>0</iCulture>
@@ -54758,7 +54758,7 @@
             </UnitCombatPromotions>
             <UnitClassPromotions>
             </UnitClassPromotions>
-            <BuildingClass>BUILDINGCLASS_LIBRARY</BuildingClass>
+            <BuildingClass>BUILDINGCLASS_INFIRMARY</BuildingClass>
             <iBuildingChange>0</iBuildingChange>
             <BuildingExtraYields>
             </BuildingExtraYields>
@@ -55325,7 +55325,7 @@
         </EventInfo>
         <EventInfo>
             <Type>EVENT_HERBALIST_9</Type>
-            <Description>A Minor Potion of Immortality (20s, 7f, Lev and Str both below 6, 7 with Mana Mastery, 8 with Arcane Lore)</Description>
+            <Description>A Minor Potion of Immortality (33s, 7f, Lev and Str both below 6, 7 with Mana Mastery, 8 with Arcane Lore)</Description>
             <LocalInfoText></LocalInfoText>
             <WorldNewsTexts>
             </WorldNewsTexts>
@@ -55337,7 +55337,7 @@
             <bPickCity>1</bPickCity>
             <bPickOtherPlayerCity>0</bPickOtherPlayerCity>
             <bDeclareWar>0</bDeclareWar>
-            <iGold>-100</iGold>
+            <iGold>-150</iGold>
             <bGoldToPlayer>0</bGoldToPlayer>
             <iRandomGold>0</iRandomGold>
             <iCulture>0</iCulture>
@@ -55410,7 +55410,7 @@
             </EventTimes>
             <ClearEvents>
             </ClearEvents>
-            <PythonCallback>herbalist20</PythonCallback>
+            <PythonCallback>herbalist33</PythonCallback>
             <PythonExpireCheck></PythonExpireCheck>
             <PythonCanDo>canBuyMinorImmortality</PythonCanDo>
             <PythonHelp></PythonHelp>

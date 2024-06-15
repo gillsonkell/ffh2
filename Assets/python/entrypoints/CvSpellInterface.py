@@ -2776,6 +2776,9 @@ def spellSacrificeAltar(caster):
       caster.finishMoves()
       szBuffer = gc.getUnitInfo(caster.getUnitType()).getDescription()
       CyInterface().addMessage(caster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_MOKKAS_CAULDRON",((szBuffer, ))),'AS2D_DISCOVERBONUS',1,'Art/Interface/Buttons/Buildings/Mokkas Cauldron.dds',ColorTypes(7),pCity.getX(),pCity.getY(),True,True)
+      if pCity.getNumRealBuilding(gc.getInfoTypeForString('BUILDING_SOUL_FORGE')) > 0:
+        pCity.changeProduction(caster.getExperience() + 10)
+        CyInterface().addMessage(pCity.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_SOUL_FORGE",()),'AS2D_DISCOVERBONUS',1,'Art/Interface/Buttons/Buildings/Soulforge.dds',ColorTypes(7),pCity.getX(),pCity.getY(),True,True)
   else:
     cf.setObjectInt(caster.plot().getPlotCity(),'Sacrifice',CyGame().getGameTurn())
     caster.kill(True,0)
@@ -2930,6 +2933,9 @@ def spellScorch(caster):
     pPlot.setTerrainType(gc.getInfoTypeForString('TERRAIN_TUNDRA'),True,True)
   if pPlot.isOwned():
     cf.startWar(caster.getOwner(), pPlot.getOwner(), WarPlanTypes.WARPLAN_TOTAL)
+
+def giveXP(caster,amt):
+  caster.changeExperience(amt, -1, False, False, False)
 
 def spellSing(caster):
   pPlot = caster.plot()
@@ -4492,32 +4498,47 @@ def spellTeleport(caster,loc):
     iSafeRange *= 2
   
   iDam = iRange - iSafeRange
-  
-  if iDam > 10:
-    sMsg = caster.getName() + ' fails to teleport due to range or some other interference... ( Max safe range: '+str( iSafeRange )+' )'
 
-    CyInterface().addMessage(caster.getOwner(),False,25,sMsg,'AS2D_CHARM_PERSON',1,'Art/Interface/Buttons/Promotions/Dimensional1.dds',ColorTypes(13),caster.getX(),caster.getY(),True,True)
+  ctx = cf.getObjectInt(caster,'tx')
+  cty = cf.getObjectInt(caster,'ty')
+
+  if ( itx == ctx and ity == cty ) or iDam < 1:
+    if iDam > 10:
+      sMsg = caster.getName() + ' fails to teleport due to range or some other interference... ( Max safe range: '+str( iSafeRange )+' )'
+
+      CyInterface().addMessage(caster.getOwner(),False,25,sMsg,'AS2D_CHARM_PERSON',1,'Art/Interface/Buttons/Promotions/Dimensional1.dds',ColorTypes(13),caster.getX(),caster.getY(),True,True)
+      CyInterface().addCombatMessage(caster.getOwner(),sMsg )
+      
+      return False
+
+    if iDam > 0:
+      caster.setDamage(caster.getDamage() + iDam * 5, caster.getOwner())
+
+    pPlot = caster.plot()
+    caster.setXY(itx, ity, true, true, false)
+    caster.setHasPromotion(gc.getInfoTypeForString('PROMOTION_CHARMED'), True)
+
+    if iPassengers > 0:
+      for i in range(pPlot.getNumUnits()):
+        if iPassengers > 0:
+          pUnit = pPlot.getUnit(0)
+          if not pUnit.isCargo():
+            iPassengers -= 1
+            
+          pUnit.setXY(itx, ity, true, true, false)
+          pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_CHARMED'), True)
+        
+          if iDam > 0:
+            pUnit.setDamage(pUnit.getDamage() + iDam * 5, pUnit.getOwner())
+  else:
+    sMsg = caster.getName() + ' can safely teleport '+str( iSafeRange )+' tiles and bring along '+str(iPassengers)+'.  The destination is '+str( iRange )+' tiles away.  Potential damage: '+str(iDam*5)+'.  Cast again to proceed...'
+
+    CyInterface().addMessage(caster.getOwner(),False,25,sMsg,'AS2D_OVERLORDS_DINK',1,'Art/Interface/Buttons/Promotions/Dimensional1.dds',ColorTypes(13),caster.getX(),caster.getY(),True,True)
     CyInterface().addCombatMessage(caster.getOwner(),sMsg )
     
-    return False
-
-  if iDam > 0:
-    caster.setDamage(caster.getDamage() + iDam * 5, caster.getOwner())
-
-  pPlot = caster.plot()
-  caster.setXY(itx, ity, true, true, false)
-  caster.setHasPromotion(gc.getInfoTypeForString('PROMOTION_CHARMED'), True)
-
-  if iPassengers > 0:
-    for i in range(pPlot.getNumUnits()):
-      if iPassengers > 0:
-        iPassengers -= 1
-        pUnit = pPlot.getUnit(0)
-        pUnit.setXY(itx, ity, true, true, false)
-        pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_CHARMED'), True)
-        
-        if iDam > 0:
-          pUnit.setDamage(pUnit.getDamage() + iDam * 5, pUnit.getOwner())
+    cf.setObjectInt(caster,'tx',itx)
+    cf.setObjectInt(caster,'ty',ity)
+    caster.setHasCasted( False )
 
 
 def reqCreateBuccaneer(caster):

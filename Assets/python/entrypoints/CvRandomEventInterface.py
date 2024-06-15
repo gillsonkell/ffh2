@@ -6951,8 +6951,11 @@ def canBuyMinorImmortality(argsList):
   if pUnit.getUnitClassType() == gc.getInfoTypeForString('UNITCLASS_SETTLER'):
     return False
     
+  if not pUnit.isAlive():
+    return False
+    
   strSetData = cPickle.loads(pCity.getScriptData())
-  if CyGame().getGameTurn() - strSetData['BUILDING_HERBALIST'] < 20:
+  if CyGame().getGameTurn() - strSetData['BUILDING_HERBALIST'] < 33:
     return False
 
   return True
@@ -6963,6 +6966,8 @@ def canBuyImmortality(argsList):
   pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
   pUnit = pPlayer.getUnit(kTriggeredData.iUnitId)
   if pUnit.getLevel() > 14 or pUnit.baseCombatStr() > 14:
+    return False
+  if not pUnit.isAlive():
     return False
   return True
 
@@ -8366,6 +8371,19 @@ def canherbalist20(argsList):
 
   return False
 
+def canherbalist33(argsList):
+  iEvent = argsList[0]
+  kTriggeredData = argsList[1]
+  pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
+  pUnit = pPlayer.getUnit(kTriggeredData.iUnitId)
+
+  pCity = pUnit.plot().getPlotCity()
+  strSetData = cPickle.loads(pCity.getScriptData())
+  if ( ( CyGame().getGameTurn() - strSetData['BUILDING_HERBALIST'] ) * pCity.getPopulation() ) / 15 > 32:
+    return True
+
+  return False
+
 def canmonument3(argsList):
   iEvent = argsList[0]
   kTriggeredData = argsList[1]
@@ -8474,6 +8492,16 @@ def herbalist20(argsList):
   pCity = pUnit.plot().getPlotCity()
 
   cf.pay(pCity,'BUILDING_HERBALIST',20,iPlayer,'herbalist')
+
+def herbalist33(argsList):
+  iEvent = argsList[0]
+  kTriggeredData = argsList[1]
+  iPlayer = kTriggeredData.ePlayer
+  bPlayer = gc.getPlayer(iPlayer)
+  pUnit = bPlayer.getUnit(kTriggeredData.iUnitId)
+  pCity = pUnit.plot().getPlotCity()
+
+  cf.pay(pCity,'BUILDING_HERBALIST',33,iPlayer,'herbalist')
 
 def library3(argsList):
   iEvent = argsList[0]

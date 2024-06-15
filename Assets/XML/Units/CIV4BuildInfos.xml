@@ -852,11 +852,11 @@
 			<bShiftDown>1</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Builds/BuildFort.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,9</Button>
+			<Button>,Art/Interface/Buttons/Buildings/PublicBaths.dds</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_TOWER</Type>
-			<Description>Build Tower</Description>
+			<Description>Build Wizard's Tower</Description>
       <Help>[ICON_BULLET]Train 1 unit residual xp 10% (25% for mages), +15 defense within 3 range, +3 visibility</Help>
 			<PrereqTech>TECH_MASONRY</PrereqTech>
 			<iTime>800</iTime>
@@ -907,7 +907,7 @@
 			<bShiftDown>1</bShiftDown>
 			<bCtrlDown>1</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Builds/BuildTower.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,9</Button>
+			<Button>,Art/Interface/Buttons/Improvements/tower.dds</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_FORT</Type>

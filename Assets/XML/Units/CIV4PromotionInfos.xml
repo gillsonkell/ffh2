@@ -20835,7 +20835,7 @@
         <PromotionInfo>
 			<Type>PROMOTION_ANCIENT</Type>
             <Description>Ancient</Description>
-            <Help>[ICON_BULLET]Adds Combat I to new young.[NEWLINE][ICON_BULLET]Requires level 10.</Help>
+            <Help>[ICON_BULLET]Adds Combat I to new young.[NEWLINE][ICON_BULLET]Requires level 11.</Help>
             <Sound>AS2D_IF_LEVELUP</Sound>
             <LayerAnimationPath>NONE</LayerAnimationPath>
             <PromotionPrereq>PROMOTION_DIRE</PromotionPrereq>
