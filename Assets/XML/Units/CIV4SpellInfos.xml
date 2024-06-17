@@ -2882,7 +2882,7 @@
             <bCausesWar>1</bCausesWar>
             <bDisplayWhenDisabled>1</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
-            <iDelay>2</iDelay>
+            <iDelay>6</iDelay>
             <PyResult>spellScorch(pCaster)</PyResult>
             <PyRequirement>reqScorch(pCaster)</PyRequirement>
             <Effect>EFFECT_SCORCH</Effect>
