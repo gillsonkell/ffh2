@@ -89,8 +89,8 @@ def doArmageddonBlight(argsList):
   if pPlayer.getCivilizationType() != gc.getInfoTypeForString('CIVILIZATION_INFERNAL'):
     for pyCity in py.getCityList():
       pCity = pyCity.GetCy()
-      i = CyGame().getSorenRandNum(15, "Blight")
-      i = 10
+      i = CyGame().getSorenRandNum(13, "Blight")
+      i += 6
       i += pCity.getPopulation()
       i -= pCity.totalGoodBuildingHealth()
       if i > 0:
@@ -144,7 +144,7 @@ def doArmageddonPestilence(argsList):
   if pPlayer.getCivilizationType() != gc.getInfoTypeForString('CIVILIZATION_INFERNAL'):
     for pyCity in PyPlayer(iPlayer).getCityList() :
       pCity = pyCity.GetCy()
-      i = CyGame().getSorenRandNum(9, "Pestilence")
+      i = CyGame().getSorenRandNum(13, "Pestilence")
       i += (pCity.getPopulation() / 4)
       i -= pCity.totalGoodBuildingHealth()
       pCity.changeEspionageHealthCounter(i)
