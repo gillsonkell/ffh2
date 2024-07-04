@@ -2765,14 +2765,16 @@ def spellSacrificeAltar(caster):
   eTeam.changeResearchProgress(iTech, iNum, caster.getOwner())
 
   if pCity.getNumRealBuilding(gc.getInfoTypeForString('BUILDING_MOKKAS_CAULDRON')) > 0:
-    cf.setObjectInt(caster.plot().getPlotCity(),'Sacrifice',(CyGame().getGameTurn()+5))
+    if cf.getObjectInt(caster.plot().getPlotCity(),'Sacrifice') < 13:
+      cf.setObjectInt(caster.plot().getPlotCity(),'Sacrifice',CyGame().getGameTurn())
+    cf.changeObjectInt(caster.plot().getPlotCity(),'Sacrifice',6)
     if pCity.getOwner() == caster.getOwner():
       for iProm in range(gc.getNumPromotionInfos()):
         if caster.isHasPromotion(iProm):
           if gc.getPromotionInfo(iProm).isRace():
             caster.setHasPromotion(iProm, False)
       caster.setHasPromotion(gc.getInfoTypeForString('PROMOTION_DEMON'), True)
-      caster.setDamage(75, PlayerTypes.NO_PLAYER)
+      caster.setDamage(60, PlayerTypes.NO_PLAYER)
       caster.finishMoves()
       szBuffer = gc.getUnitInfo(caster.getUnitType()).getDescription()
       CyInterface().addMessage(caster.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_MOKKAS_CAULDRON",((szBuffer, ))),'AS2D_DISCOVERBONUS',1,'Art/Interface/Buttons/Buildings/Mokkas Cauldron.dds',ColorTypes(7),pCity.getX(),pCity.getY(),True,True)

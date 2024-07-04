@@ -6951,6 +6951,9 @@ def canBuyMinorImmortality(argsList):
   if pUnit.getUnitClassType() == gc.getInfoTypeForString('UNITCLASS_SETTLER'):
     return False
     
+  if cf.getObjectInt(pUnit,'lesserlife') > 0:
+    return False
+    
   if not pUnit.isAlive():
     return False
     
@@ -8382,6 +8385,8 @@ def canherbalist33(argsList):
   if ( ( CyGame().getGameTurn() - strSetData['BUILDING_HERBALIST'] ) * pCity.getPopulation() ) / 15 > 32:
     return True
 
+  cf.setObjectInt(pUnit,'lesserlife',1)
+
   return False
 
 def canmonument3(argsList):
@@ -8561,7 +8566,7 @@ def axesforall(argsList):
   caster = bPlayer.getUnit(kTriggeredData.iUnitId)
   pCity = caster.plot().getPlotCity()
 
-  iBand = ( CyGame().getGameTurn() - cf.getObjectInt(pCity,'BUILDING_HERBALIST') ) / ( 30 / pCity.getPopulation() )
+  iBand = ( CyGame().getGameTurn() - cf.getObjectInt(pCity,'BUILDING_CRAFTSMEN_GUILD') ) / ( 30 / pCity.getPopulation() + 1 )
   iRange = 2
   for iiX in range(caster.getX()-iRange, caster.getX()+iRange+1, 1):
     for iiY in range(caster.getY()-iRange, caster.getY()+iRange+1, 1):
@@ -8585,7 +8590,7 @@ def bandagesforall(argsList):
   caster = bPlayer.getUnit(kTriggeredData.iUnitId)
   pCity = caster.plot().getPlotCity()
 
-  iBand = ( CyGame().getGameTurn() - cf.getObjectInt(pCity,'BUILDING_HERBALIST') ) / ( 60 / pCity.getPopulation() )
+  iBand = ( CyGame().getGameTurn() - cf.getObjectInt(pCity,'BUILDING_HERBALIST') ) / ( 60 / pCity.getPopulation() + 1 )
   iRange = 2
   for iiX in range(caster.getX()-iRange, caster.getX()+iRange+1, 1):
     for iiY in range(caster.getY()-iRange, caster.getY()+iRange+1, 1):
