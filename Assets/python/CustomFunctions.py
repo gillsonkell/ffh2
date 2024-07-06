@@ -3904,6 +3904,30 @@ class CustomFunctions:
           oNewUnit = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_GIANT_SPIDER'), pUnit.getX(), pUnit.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
           oNewUnit.convert(pUnit)
           oNewUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_FATIGUED'), False)
+          
+        ## Plagues may spread from a plague carrier
+        if pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_PLAGUE_CARRIER')):
+          iPlagueSpread = CyGame().getSorenRandNum(100, "PlagueSpread")
+          iPlagueSpreadChance = ( pUnit.getLevel() + pUnit.baseCombatStr() ) / 2
+          if iPlagueSpread < iPlagueSpreadChance:
+            lUnits = []
+            iX = pUnit.getX()
+            iY = pUnit.getY()
+            iR = iPlagueSpreadChance
+            for iiX in range(iX-iR, iX+iR+1, 1):
+              for iiY in range(iY-iR, iY+iR+1, 1):
+                plpPlot = CyMap().plot(iiX,iiY)
+                for i in range(plpPlot.getNumUnits()):
+                  plpUnit = plpPlot.getUnit(i)
+                  if gc.getTeam(pUnit.getTeam()).isAtWar(pPlayer.getTeam()) and not plpUnit.getUnitType() == gc.getInfoTypeForString('UNIT_HIDDEN_CACHE'):
+                    if plpUnit.isAlive() and not plpUnit.isDelayedDeath() and not plpUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_IMMUNE_DISEASE')):
+                      lUnits.append(pLoopUnit)
+            if len(lUnits) > 0:
+              plpUnit = lUnits[CyGame().getSorenRandNum(len(lUnits), "The Plague!")-1]
+              plpUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_PLAGUED'), True)
+              sMsg = plpUnit.getName() + ' contracts the plague from ' + pUnit.getName() + '!'
+              CyInterface().addMessage(plpUnit.getOwner(),False,25,sMsg,'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Units/Treant.dds',ColorTypes(7),plpUnit.getX(),plpUnit.getY(),True,True)
+              CyInterface().addCombatMessage(plpUnit.getOwner(),sMsg)
 
         ## Disease and Plague causes damage over time and can be recovered from
         if (pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_DISEASED')) or pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_PLAGUED')) or pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_POISONED'))):
