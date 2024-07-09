@@ -63643,7 +63643,7 @@
         </EventInfo>
         <EventInfo>
             <Type>EVENT_MEDICINE_WOMAN_1</Type>
-            <Description>Buy a small basket of simple goodies from the old lady...</Description>
+            <Description>Buy a small basket of six simple potions from the old lady...</Description>
             <LocalInfoText></LocalInfoText>
             <WorldNewsTexts>
             </WorldNewsTexts>
@@ -63744,7 +63744,7 @@
         </EventInfo>
         <EventInfo>
             <Type>EVENT_MEDICINE_WOMAN_2</Type>
-            <Description>Buy a basket from the old lady...</Description>
+            <Description>Buy a basket of four good potions from the old lady...</Description>
             <LocalInfoText></LocalInfoText>
             <WorldNewsTexts>
             </WorldNewsTexts>
@@ -63845,7 +63845,7 @@
         </EventInfo>
         <EventInfo>
             <Type>EVENT_MEDICINE_WOMAN_3</Type>
-            <Description>Buy ancient potions from the mysterious woman!</Description>
+            <Description>Buy an expensive container of three epic potions from the mysterious woman!</Description>
             <LocalInfoText></LocalInfoText>
             <WorldNewsTexts>
             </WorldNewsTexts>

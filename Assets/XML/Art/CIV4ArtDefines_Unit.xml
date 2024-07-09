@@ -14602,7 +14602,7 @@
         <UnitArtInfo>
             <Type>ART_DEF_UNIT_WAR_ELEPHANT</Type>
             <Button>Art/Interface/Buttons/Units/War Elephant.dds</Button>
-            <fScale>0.32</fScale>
+            <fScale>0.38</fScale>
             <fInterfaceScale>0.6</fInterfaceScale>
             <bActAsLand>0</bActAsLand>
             <bActAsAir>0</bActAsAir>
@@ -14626,7 +14626,7 @@
         <UnitArtInfo>
             <Type>ART_DEF_UNIT_WAR_ELEPHANT_AMURITES</Type>
             <Button>Art/Interface/Buttons/Units/War Elephant.dds</Button>
-            <fScale>0.32</fScale>
+            <fScale>0.38</fScale>
             <fInterfaceScale>0.6</fInterfaceScale>
             <bActAsLand>0</bActAsLand>
             <bActAsAir>0</bActAsAir>
@@ -14649,7 +14649,7 @@
         <UnitArtInfo>
             <Type>ART_DEF_UNIT_WAR_ELEPHANT_BALSERAPHS</Type>
             <Button>Art/Interface/Buttons/Units/War Elephant.dds</Button>
-            <fScale>0.32</fScale>
+            <fScale>0.38</fScale>
             <fInterfaceScale>0.6</fInterfaceScale>
             <bActAsLand>0</bActAsLand>
             <bActAsAir>0</bActAsAir>
@@ -14672,7 +14672,7 @@
         <UnitArtInfo>
             <Type>ART_DEF_UNIT_WAR_ELEPHANT_BANNOR</Type>
             <Button>Art/Interface/Buttons/Units/War Elephant.dds</Button>
-            <fScale>0.32</fScale>
+            <fScale>0.38</fScale>
             <fInterfaceScale>0.6</fInterfaceScale>
             <bActAsLand>0</bActAsLand>
             <bActAsAir>0</bActAsAir>
@@ -14695,7 +14695,7 @@
         <UnitArtInfo>
             <Type>ART_DEF_UNIT_WAR_ELEPHANT_CLAN_OF_EMBERS</Type>
             <Button>Art/Interface/Buttons/Units/War Elephant.dds</Button>
-            <fScale>0.32</fScale>
+            <fScale>0.38</fScale>
             <fInterfaceScale>0.6</fInterfaceScale>
             <bActAsLand>0</bActAsLand>
             <bActAsAir>0</bActAsAir>
@@ -14718,7 +14718,7 @@
         <UnitArtInfo>
             <Type>ART_DEF_UNIT_WAR_ELEPHANT_DOVIELLO</Type>
             <Button>Art/Interface/Buttons/Units/War Elephant Doviello.dds</Button>
-            <fScale>0.32</fScale>
+            <fScale>0.38</fScale>
             <fInterfaceScale>0.6</fInterfaceScale>
             <bActAsLand>0</bActAsLand>
             <bActAsAir>0</bActAsAir>
@@ -14741,7 +14741,7 @@
         <UnitArtInfo>
             <Type>ART_DEF_UNIT_WAR_ELEPHANT_ELOHIM</Type>
             <Button>Art/Interface/Buttons/Units/War Elephant.dds</Button>
-            <fScale>0.32</fScale>
+            <fScale>0.38</fScale>
             <fInterfaceScale>0.6</fInterfaceScale>
             <bActAsLand>0</bActAsLand>
             <bActAsAir>0</bActAsAir>
@@ -14764,7 +14764,7 @@
         <UnitArtInfo>
             <Type>ART_DEF_UNIT_WAR_ELEPHANT_HIPPUS</Type>
             <Button>Art/Interface/Buttons/Units/War Elephant Hippus.dds</Button>
-            <fScale>0.32</fScale>
+            <fScale>0.38</fScale>
             <fInterfaceScale>0.6</fInterfaceScale>
             <bActAsLand>0</bActAsLand>
             <bActAsAir>0</bActAsAir>
@@ -14788,7 +14788,7 @@
         <UnitArtInfo>
             <Type>ART_DEF_UNIT_WAR_ELEPHANT_ILLIANS</Type>
             <Button>Art/Interface/Buttons/Units/War Elephant.dds</Button>
-            <fScale>0.32</fScale>
+            <fScale>0.38</fScale>
             <fInterfaceScale>0.6</fInterfaceScale>
             <bActAsLand>0</bActAsLand>
             <bActAsAir>0</bActAsAir>
@@ -14811,7 +14811,7 @@
         <UnitArtInfo>
             <Type>ART_DEF_UNIT_WAR_ELEPHANT_KHAZAD</Type>
             <Button>Art/Interface/Buttons/Units/War Elephant.dds</Button>
-            <fScale>0.32</fScale>
+            <fScale>0.38</fScale>
             <fInterfaceScale>0.6</fInterfaceScale>
             <bActAsLand>0</bActAsLand>
             <bActAsAir>0</bActAsAir>
@@ -14834,7 +14834,7 @@
         <UnitArtInfo>
             <Type>ART_DEF_UNIT_WAR_ELEPHANT_KURIOTATES</Type>
             <Button>Art/Interface/Buttons/Units/War Elephant.dds</Button>
-            <fScale>0.32</fScale>
+            <fScale>0.38</fScale>
             <fInterfaceScale>0.6</fInterfaceScale>
             <bActAsLand>0</bActAsLand>
             <bActAsAir>0</bActAsAir>
@@ -14857,7 +14857,7 @@
         <UnitArtInfo>
             <Type>ART_DEF_UNIT_WAR_ELEPHANT_LANUN</Type>
             <Button>Art/Interface/Buttons/Units/War Elephant.dds</Button>
-            <fScale>0.32</fScale>
+            <fScale>0.38</fScale>
             <fInterfaceScale>0.6</fInterfaceScale>
             <bActAsLand>0</bActAsLand>
             <bActAsAir>0</bActAsAir>
@@ -14880,7 +14880,7 @@
         <UnitArtInfo>
             <Type>ART_DEF_UNIT_WAR_ELEPHANT_LJOSALFAR</Type>
             <Button>Art/Interface/Buttons/Units/War Elephant.dds</Button>
-            <fScale>0.32</fScale>
+            <fScale>0.38</fScale>
             <fInterfaceScale>0.6</fInterfaceScale>
             <bActAsLand>0</bActAsLand>
             <bActAsAir>0</bActAsAir>
@@ -14903,7 +14903,7 @@
         <UnitArtInfo>
             <Type>ART_DEF_UNIT_WAR_ELEPHANT_MALAKIM</Type>
             <Button>Art/Interface/Buttons/Units/War Elephant.dds</Button>
-            <fScale>0.32</fScale>
+            <fScale>0.38</fScale>
             <fInterfaceScale>0.6</fInterfaceScale>
             <bActAsLand>0</bActAsLand>
             <bActAsAir>0</bActAsAir>
@@ -14926,7 +14926,7 @@
         <UnitArtInfo>
             <Type>ART_DEF_UNIT_WAR_ELEPHANT_SHEAIM</Type>
             <Button>Art/Interface/Buttons/Units/War Elephant.dds</Button>
-            <fScale>0.32</fScale>
+            <fScale>0.38</fScale>
             <fInterfaceScale>0.6</fInterfaceScale>
             <bActAsLand>0</bActAsLand>
             <bActAsAir>0</bActAsAir>
@@ -14949,7 +14949,7 @@
         <UnitArtInfo>
             <Type>ART_DEF_UNIT_WAR_ELEPHANT_SIDAR</Type>
             <Button>Art/Interface/Buttons/Units/War Elephant.dds</Button>
-            <fScale>0.32</fScale>
+            <fScale>0.38</fScale>
             <fInterfaceScale>0.6</fInterfaceScale>
             <bActAsLand>0</bActAsLand>
             <bActAsAir>0</bActAsAir>
@@ -14972,7 +14972,7 @@
         <UnitArtInfo>
             <Type>ART_DEF_UNIT_WAR_ELEPHANT_SVARTALFAR</Type>
             <Button>Art/Interface/Buttons/Units/War Elephant.dds</Button>
-            <fScale>0.32</fScale>
+            <fScale>0.38</fScale>
             <fInterfaceScale>0.6</fInterfaceScale>
             <bActAsLand>0</bActAsLand>
             <bActAsAir>0</bActAsAir>

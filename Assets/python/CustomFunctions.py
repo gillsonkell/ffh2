@@ -3297,6 +3297,8 @@ class CustomFunctions:
           
         ## Grant barbarian zombie units to the evil player that owns the land they are in.
         if pPlayer.isBarbarian() and not plotPlayer.isBarbarian() and plotPlayer.isHuman() and plotPlayer.getAlignment() == iEvil and plotPlayer.isHasTech(gc.getInfoTypeForString('TECH_NECROMANCY')) and ( pUnit.getUnitType() == gc.getInfoTypeForString('UNIT_ZOMBIE') or pUnit.getUnitType() == gc.getInfoTypeForString('UNIT_ZOMBIE_1') or pUnit.getUnitType() == gc.getInfoTypeForString('UNIT_ZOMBIE_2') ):
+          CyInterface().addMessage(pUnit.getOwner(),false,25,pUnit.getName()+' rallies to you...','',1,'Art/Interface/Buttons/Units/Diseased Corpse.dds',ColorTypes(13),pUnit.getX(),pUnit.getY(),True,True)
+          CyInterface().addCombatMessage(pUnit.getOwner(),pUnit.getName()+' rallies to you...')
           newUnit = plotPlayer.initUnit(pUnit.getUnitType(), pUnit.getX(), pUnit.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
           newUnit.convert(pUnit)
           
@@ -3314,8 +3316,6 @@ class CustomFunctions:
           
         ## Damaged Creeps Can wake up and if they do, wake up all creeps on the stack
         if (pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_CREEP')) and pUnit.getDamage() > 5 and CyGame().getSorenRandNum(3, "Wake Creep") == 1):
-          # pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_CREEP'), False)
-          # pUnit.finishMoves()
           for iii in range(pPlot.getNumUnits()):
             if iii > pPlot.getNumUnits():
               break
@@ -3926,8 +3926,10 @@ class CustomFunctions:
               plpUnit = lUnits[CyGame().getSorenRandNum(len(lUnits), "The Plague!")-1]
               plpUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_PLAGUED'), True)
               sMsg = plpUnit.getName() + ' contracts the plague from ' + pUnit.getName() + '!'
-              CyInterface().addMessage(plpUnit.getOwner(),False,25,sMsg,'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Units/Treant.dds',ColorTypes(7),plpUnit.getX(),plpUnit.getY(),True,True)
+              CyInterface().addMessage(plpUnit.getOwner(),False,25,sMsg,'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Promotions/plagued.dds',ColorTypes(7),plpUnit.getX(),plpUnit.getY(),True,True)
               CyInterface().addCombatMessage(plpUnit.getOwner(),sMsg)
+              CyInterface().addMessage(pUnit.getOwner(),False,25,sMsg,'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Promotions/plagued.dds',ColorTypes(14),pUnit.getX(),pUnit.getY(),True,True)
+              CyInterface().addCombatMessage(pUnit.getOwner(),sMsg)
 
         ## Disease and Plague causes damage over time and can be recovered from
         if (pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_DISEASED')) or pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_PLAGUED')) or pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_POISONED'))):
@@ -3990,11 +3992,11 @@ class CustomFunctions:
                   if not pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_DISEASED')) and CyGame().getSorenRandNum(100, "JungleFever") < iJunglePlot + iDiseaseInPlot * iDisMult + pUnit.getDamage() / 10 - iTreat * iDisMult:
                     pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_DISEASED'), True)
                     sMsg = pUnit.getName() + ' contracts a disease!'
-                    CyInterface().addMessage(pUnit.getOwner(),false,25,sMsg,'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Units/Treant.dds',ColorTypes(7),pUnit.getX(),pUnit.getY(),True,True)
+                    CyInterface().addMessage(pUnit.getOwner(),false,25,sMsg,'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Promotions/diseased.dds',ColorTypes(7),pUnit.getX(),pUnit.getY(),True,True)
                   if not pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_PLAGUED')) and CyGame().getSorenRandNum(100, "ThePlague") < iPlagueInPlot * iDisMult * 2 + pUnit.getDamage() / 5 - iTreat * iDisMult and iPlagueInPlot > 0:
                     pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_PLAGUED'), True)
                     sMsg = pUnit.getName() + ' contracts the plague!'
-                    CyInterface().addMessage(pUnit.getOwner(),false,25,sMsg,'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Units/Treant.dds',ColorTypes(7),pUnit.getX(),pUnit.getY(),True,True)
+                    CyInterface().addMessage(pUnit.getOwner(),false,25,sMsg,'AS2D_FEATUREGROWTH',1,'Art/Interface/Buttons/Promotions/plagued.dds',ColorTypes(7),pUnit.getX(),pUnit.getY(),True,True)
                     
         ## Flames damage living units
         if pPlot.getFeatureType() == iFlames:

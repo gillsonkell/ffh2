@@ -6880,7 +6880,7 @@ def doMedicineWoman1(argsList):
   bPlayer = gc.getPlayer(kTriggeredData.ePlayer)
   pCity = bPlayer.getCity(kTriggeredData.iCityId)
 
-  iGroupSize = CyGame().getSorenRandNum(2, "GroupSize") + 2
+  iGroupSize = 6
   sPatrons = [ 'EQUIPMENT_POTION_XP_MINOR', 'EQUIPMENT_POTION_HEALING_MINOR', 'EQUIPMENT_POTION_HASTE', 'EQUIPMENT_POTION_STRENGTH', 'EQUIPMENT_POTION_HEALING_MODERATE', 'EQUIPMENT_POTION_REGENERATION' ]
 
   for i in range(iGroupSize):
@@ -6894,8 +6894,8 @@ def doMedicineWoman2(argsList):
   bPlayer = gc.getPlayer(kTriggeredData.ePlayer)
   pCity = bPlayer.getCity(kTriggeredData.iCityId)
 
-  iGroupSize = CyGame().getSorenRandNum(3, "GroupSize") + 3
-  sPatrons = [ 'EQUIPMENT_POTION_XP_MINOR', 'EQUIPMENT_POTION_HASTE', 'EQUIPMENT_POTION_STRENGTH', 'EQUIPMENT_POTION_HEALING_MODERATE', 'EQUIPMENT_POTION_REGENERATION', 'EQUIPMENT_POTION_XP', 'EQUIPMENT_POTION_HEALING_GREATER', 'EQUIPMENT_POTION_STRENGTH_ENDURING', 'EQUIPMENT_POTION_VAMPIRISM', 'EQUIPMENT_POTION_OF_INVISIBILITY' ]
+  iGroupSize = 4
+  sPatrons = [ 'EQUIPMENT_POTION_XP', 'EQUIPMENT_POTION_HEALING_GREATER', 'EQUIPMENT_POTION_STRENGTH_ENDURING', 'EQUIPMENT_POTION_OF_INVISIBILITY' ]
 
   for i in range(iGroupSize):
     sPatronType = sPatrons[ CyGame().getSorenRandNum(len(sPatrons), "PatronType"+str(i)) ]
@@ -6908,8 +6908,8 @@ def doMedicineWoman3(argsList):
   bPlayer = gc.getPlayer(kTriggeredData.ePlayer)
   pCity = bPlayer.getCity(kTriggeredData.iCityId)
 
-  iGroupSize = CyGame().getSorenRandNum(3, "GroupSize") + 3
-  sPatrons = [ 'EQUIPMENT_POTION_HEALING_MODERATE', 'EQUIPMENT_POTION_REGENERATION', 'EQUIPMENT_POTION_XP', 'EQUIPMENT_POTION_HEALING_GREATER', 'EQUIPMENT_POTION_STRENGTH_ENDURING', 'EQUIPMENT_POTION_VAMPIRISM', 'EQUIPMENT_POTION_OF_INVISIBILITY' ]
+  iGroupSize = 3
+  sPatrons = [ 'EQUIPMENT_POTION_VAMPIRISM', 'EQUIPMENT_HEALING_SALVE' ]
 
   for i in range(iGroupSize):
     sPatronType = sPatrons[ CyGame().getSorenRandNum(len(sPatrons), "PatronType"+str(i)) ]
@@ -8385,8 +8385,6 @@ def canherbalist33(argsList):
   if ( ( CyGame().getGameTurn() - strSetData['BUILDING_HERBALIST'] ) * pCity.getPopulation() ) / 15 > 32:
     return True
 
-  cf.setObjectInt(pUnit,'lesserlife',1)
-
   return False
 
 def canmonument3(argsList):
@@ -8507,6 +8505,8 @@ def herbalist33(argsList):
   pCity = pUnit.plot().getPlotCity()
 
   cf.pay(pCity,'BUILDING_HERBALIST',33,iPlayer,'herbalist')
+  cf.setObjectInt(pUnit,'lesserlife',1)
+
 
 def library3(argsList):
   iEvent = argsList[0]
