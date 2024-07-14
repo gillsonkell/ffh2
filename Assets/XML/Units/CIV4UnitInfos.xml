@@ -8797,6 +8797,10 @@
             <GreatPeoples>
             </GreatPeoples>
             <Buildings>
+                <Building>
+                    <BuildingType>BUILDING_ARCHMAGE_STUDY</BuildingType>
+                    <bBuilding>1</bBuilding>
+                </Building>
             </Buildings>
             <ForceBuildings>
             </ForceBuildings>
@@ -9097,6 +9101,10 @@
             <GreatPeoples>
             </GreatPeoples>
             <Buildings>
+                <Building>
+                    <BuildingType>BUILDING_ARCHMAGE_STUDY</BuildingType>
+                    <bBuilding>1</bBuilding>
+                </Building>
             </Buildings>
             <ForceBuildings>
             </ForceBuildings>

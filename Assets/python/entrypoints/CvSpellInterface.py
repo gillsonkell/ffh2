@@ -2427,6 +2427,10 @@ def reqCoronate(caster):
   iPlayer = caster.getOwner()
   if pCity.getCulture(iPlayer) < 1000:
     return False
+  if caster.getUnitCombatType() == gc.getInfoTypeForString('UNITCOMBAT_BEAST'):
+    return False
+  if caster.getUnitCombatType() == gc.getInfoTypeForString('UNITCOMBAT_ANIMAL'):
+    return False
   iNobles = cf.getObjectInt(pCity,'Nobles') + 1
   if pCity.getCulture(iPlayer) >= iNobles * iNobles * 1000:
     return True
@@ -2938,6 +2942,10 @@ def spellScorch(caster):
 
 def giveXP(caster,amt):
   caster.changeExperience(amt, -1, False, False, False)
+
+def spellWhisper(caster):
+  pPlot = caster.plot()
+  pPlot.setFeatureType(gc.getInfoTypeForString('FEATURE_FOREST_ANCIENT'), 0)
 
 def spellSing(caster):
   pPlot = caster.plot()
