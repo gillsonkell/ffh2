@@ -6564,7 +6564,7 @@
         <SpellInfo>
             <Type>SPELL_UNDEAD_FERVOR</Type>
             <Description>Undead Fervor</Description>
-            <Civilopedia>[ICON_BULLET]Grants Minor Blessing, Haste and Regenerate to all undead units in the plot.[NEWLINE][ICON_BULLET]Must be level 13 or higher.</Civilopedia>
+            <Civilopedia>[ICON_BULLET]Grants Minor Blessing, Haste and Regenerate to undead units in the plot equal to the casters level.[NEWLINE][ICON_BULLET]Must be level 13 or higher.</Civilopedia>
             <Strategy>NONE</Strategy>
             <Help></Help>
             <PromotionPrereq1>PROMOTION_UNDEAD</PromotionPrereq1>

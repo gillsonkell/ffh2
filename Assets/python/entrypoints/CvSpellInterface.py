@@ -5520,10 +5520,12 @@ def reqBlessMinorUndead(caster):
 
 def spellBlessMinorUndead(caster):
   pPlot = caster.plot()
+  iNumBlessed = caster.getLevel()
   for i in range(pPlot.getNumUnits()):
     pUnit = pPlot.getUnit(i)
-    if (pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_UNDEAD')) == True):
+    if pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_UNDEAD')) == True and iNumBlessed > 0:
       if not pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_BLESSED_MINOR')) or not pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_HASTED')) or not pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_REGENERATION')):
+        iNumBlessed -= 1
         pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_BLESSED_MINOR'),True)
         pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_HASTED'),True)
         pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_REGENERATION'),True)

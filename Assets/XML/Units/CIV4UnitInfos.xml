@@ -76328,7 +76328,7 @@
             <DiploVoteType>NONE</DiploVoteType>
             <EquipmentPromotion>NONE</EquipmentPromotion>
             <PrereqAlignment>NONE</PrereqAlignment>
-            <PrereqBuildingClass>NONE</PrereqBuildingClass>
+            <PrereqBuildingClass>BUILDINGCLASS_TOWER_OF_NECROMANCY</PrereqBuildingClass>
             <PrereqCivic>NONE</PrereqCivic>
             <PromotionFromCombat>NONE</PromotionFromCombat>
             <Image>NONE</Image>
@@ -76582,7 +76582,7 @@
             <DiploVoteType>NONE</DiploVoteType>
             <EquipmentPromotion>NONE</EquipmentPromotion>
             <PrereqAlignment>NONE</PrereqAlignment>
-            <PrereqBuildingClass>NONE</PrereqBuildingClass>
+            <PrereqBuildingClass>BUILDINGCLASS_TRAINING_YARD</PrereqBuildingClass>
             <PrereqCivic>NONE</PrereqCivic>
             <PromotionFromCombat>NONE</PromotionFromCombat>
             <Image>NONE</Image>
