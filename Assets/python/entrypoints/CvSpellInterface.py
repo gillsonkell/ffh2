@@ -2768,10 +2768,22 @@ def spellSacrificeAltar(caster):
   iNum = 10 + (caster.getLevel() * caster.getLevel())
   eTeam.changeResearchProgress(iTech, iNum, caster.getOwner())
 
+  cf.setObjectInt(caster.plot().getPlotCity(),'Sacrifice',CyGame().getGameTurn()+6)
+  
+  iXPAmount = int( caster.getExperience() / 13 )
+  if iXPAmount > 0:
+    iNumBlessed = 6
+    for i in range(pPlot.getNumUnits()):
+      pUnit = pPlot.getUnit(i)
+      if pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_DEMON')) and iNumBlessed > 0:
+        pUnit.changeExperience(iXPAmount, -1, False, False, False)
+        iNumBlessed -= 1
+  
   if pCity.getNumRealBuilding(gc.getInfoTypeForString('BUILDING_MOKKAS_CAULDRON')) > 0:
-    if cf.getObjectInt(caster.plot().getPlotCity(),'Sacrifice') < 13:
-      cf.setObjectInt(caster.plot().getPlotCity(),'Sacrifice',CyGame().getGameTurn())
-    cf.changeObjectInt(caster.plot().getPlotCity(),'Sacrifice',6)
+    ## If you want to save up uses...
+    ## if cf.getObjectInt(caster.plot().getPlotCity(),'Sacrifice') < 13:
+    ##  cf.setObjectInt(caster.plot().getPlotCity(),'Sacrifice',CyGame().getGameTurn())
+    ## cf.changeObjectInt(caster.plot().getPlotCity(),'Sacrifice',6)
     if pCity.getOwner() == caster.getOwner():
       for iProm in range(gc.getNumPromotionInfos()):
         if caster.isHasPromotion(iProm):
@@ -2786,7 +2798,7 @@ def spellSacrificeAltar(caster):
         pCity.changeProduction(caster.getExperience() + 10)
         CyInterface().addMessage(pCity.getOwner(),True,25,CyTranslator().getText("TXT_KEY_MESSAGE_SOUL_FORGE",()),'AS2D_DISCOVERBONUS',1,'Art/Interface/Buttons/Buildings/Soulforge.dds',ColorTypes(7),pCity.getX(),pCity.getY(),True,True)
   else:
-    cf.setObjectInt(caster.plot().getPlotCity(),'Sacrifice',CyGame().getGameTurn())
+    ## cf.setObjectInt(caster.plot().getPlotCity(),'Sacrifice',CyGame().getGameTurn())
     caster.kill(True,0)
 
 def spellSacrificePyre(caster):
