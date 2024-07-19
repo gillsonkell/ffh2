@@ -753,6 +753,8 @@ class CvGameUtils:
     if eProject == gc.getInfoTypeForString('PROJECT_PACT_OF_THE_NILHORN'):
       if not cf.nearPeak(pCity.plot().getX(),pCity.plot().getY(),2):
         return True
+      if cf.getObjectInt( pCity, 'PactOfNilhorn' ) == 1:
+        return True
 
     if eProject == gc.getInfoTypeForString('PROJECT_PURGE_THE_UNFAITHFUL'):
       if pPlayer.isHuman() == False:

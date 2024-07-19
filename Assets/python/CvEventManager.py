@@ -1221,6 +1221,7 @@ class CvEventManager:
     if iProjectType == gc.getInfoTypeForString('PROJECT_PACT_OF_THE_NILHORN'):
       newUnit1 = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_HILL_GIANT'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_NORTH)
       newUnit1.setHasPromotion(gc.getInfoTypeForString('PROMOTION_HIDDEN_NATIONALITY'), True)
+      cf.setObjectInt( pCity, 'PactOfNilhorn', 1 )
       ## newUnit1.setName("Larry")
       ## newUnit2 = pPlayer.initUnit(gc.getInfoTypeForString('UNIT_HILL_GIANT'), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_NORTH)
       ## newUnit2.setHasPromotion(gc.getInfoTypeForString('PROMOTION_HIDDEN_NATIONALITY'), True)
