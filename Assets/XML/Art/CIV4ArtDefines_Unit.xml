@@ -2766,7 +2766,7 @@
                 <fBattleDistance>0.35</fBattleDistance>
                 <fRangedDeathTime>0.31</fRangedDeathTime>
                 <bActAsRanged>0</bActAsRanged>
-                <TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+                <TrainSound>AS2D_UNIT_BUILD_DEMON</TrainSound>
             <AudioRunSounds>
                 <AudioRunTypeLoop/>
                 <AudioRunTypeEnd/>
@@ -10394,6 +10394,7 @@
                 <AudioRunTypeLoop/>
                 <AudioRunTypeEnd/>
             </AudioRunSounds>
+            <SelectionSound>AS3D_BALOR_SELECT</SelectionSound>
         </UnitArtInfo>
         <UnitArtInfo>
             <Type>ART_DEF_UNIT_METEOR</Type>
@@ -14044,6 +14045,7 @@
                 <AudioRunTypeLoop/>
                 <AudioRunTypeEnd/>
             </AudioRunSounds>
+            <SelectionSound>AS3D_UN_SETLR_FM_FIDGT_VOX</SelectionSound>
         </UnitArtInfo>
         <UnitArtInfo>
             <Type>ART_DEF_UNIT_SUPPLIES</Type>

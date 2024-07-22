@@ -1315,6 +1315,13 @@ class CvEventManager:
                 unit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_EMPOWER5'), True)
             
     if unit.getUnitCombatType() == gc.getInfoTypeForString('UNITCOMBAT_ADEPT'):
+      iNum = pPlayer.getNumAvailableBonuses(gc.getInfoTypeForString('BONUS_MANA_DIMENSIONAL'))
+      if iNum > 1:
+        unit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_DIMENSIONAL1'), True)
+        if iNum > 2:
+          unit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_DIMENSIONAL2'), True)
+          if iNum > 3:
+            unit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_DIMENSIONAL3'), True)
       iNum = pPlayer.getNumAvailableBonuses(gc.getInfoTypeForString('BONUS_MANA_AIR'))
       if iNum > 1:
         unit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_AIR1'), True)

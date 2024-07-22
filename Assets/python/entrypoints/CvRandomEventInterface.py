@@ -6895,7 +6895,7 @@ def doMedicineWoman2(argsList):
   pCity = bPlayer.getCity(kTriggeredData.iCityId)
 
   iGroupSize = 4
-  sPatrons = [ 'EQUIPMENT_POTION_XP', 'EQUIPMENT_POTION_HEALING_GREATER', 'EQUIPMENT_POTION_STRENGTH_ENDURING', 'EQUIPMENT_POTION_OF_INVISIBILITY' ]
+  sPatrons = [ 'EQUIPMENT_POTION_XP', 'EQUIPMENT_POTION_HEALING_GREATER', 'EQUIPMENT_POTION_STRENGTH_ENDURING', 'EQUIPMENT_POTION_OF_INVISIBILITY', 'EQUIPMENT_POTION_OF_RESTORATION' ]
 
   for i in range(iGroupSize):
     sPatronType = sPatrons[ CyGame().getSorenRandNum(len(sPatrons), "PatronType"+str(i)) ]

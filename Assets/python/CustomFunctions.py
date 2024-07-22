@@ -1263,6 +1263,11 @@ class CustomFunctions:
       iItems = 1
       iMessage = 1
 
+    if CyGame().getSorenRandNum(100, "ItemSelect9") < iHaveScrolls - 8:
+      iUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_POTION_OF_RESTORATION'), True)
+      iItems = 1
+      iMessage = 1
+
     if iUnit.getUnitType() == gc.getInfoTypeForString('UNIT_MERCHANT_SHIP') and iMessage > 0:
       sMsg = ''
       if iWeapons > 0:
