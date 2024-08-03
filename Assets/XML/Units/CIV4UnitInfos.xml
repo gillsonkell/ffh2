@@ -76582,7 +76582,7 @@
             <DiploVoteType>NONE</DiploVoteType>
             <EquipmentPromotion>NONE</EquipmentPromotion>
             <PrereqAlignment>NONE</PrereqAlignment>
-            <PrereqBuildingClass>BUILDINGCLASS_TRAINING_YARD</PrereqBuildingClass>
+            <PrereqBuildingClass>BUILDINGCLASS_DUNGEON</PrereqBuildingClass>
             <PrereqCivic>NONE</PrereqCivic>
             <PromotionFromCombat>NONE</PromotionFromCombat>
             <Image>NONE</Image>

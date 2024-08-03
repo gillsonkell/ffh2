@@ -14045,7 +14045,6 @@
                 <AudioRunTypeLoop/>
                 <AudioRunTypeEnd/>
             </AudioRunSounds>
-            <SelectionSound>AS3D_UN_SETLR_FM_FIDGT_VOX</SelectionSound>
         </UnitArtInfo>
         <UnitArtInfo>
             <Type>ART_DEF_UNIT_SUPPLIES</Type>
