@@ -59062,7 +59062,7 @@
         </EventInfo>
         <EventInfo>
             <Type>EVENT_INITIAL_3</Type>
-            <Description>A couple of runaway slaves offer to help you out for a little while in return for some much needed cash...</Description>
+            <Description>A group of runaway slaves offer to help you out for a little while in return for some much needed cash...</Description>
             <LocalInfoText></LocalInfoText>
             <WorldNewsTexts>
             </WorldNewsTexts>
@@ -59091,11 +59091,11 @@
             <iTechMinTurnsLeft>0</iTechMinTurnsLeft>
             <PrereqTech>NONE</PrereqTech>
             <UnitClass>UNITCLASS_SLAVE</UnitClass>
-            <iNumFreeUnits>2</iNumFreeUnits>
+            <iNumFreeUnits>5</iNumFreeUnits>
             <bDisbandUnit>0</bDisbandUnit>
             <iUnitExperience>0</iUnitExperience>
             <iUnitImmobileTurns>0</iUnitImmobileTurns>
-            <UnitPromotion>PROMOTION_STRONG</UnitPromotion>
+            <UnitPromotion></UnitPromotion>
             <UnitName></UnitName>
             <UnitCombatPromotions>
             </UnitCombatPromotions>

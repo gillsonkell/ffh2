@@ -68,8 +68,8 @@ def doArmageddonApocalypse(argsList):
   for pUnit in apUnitList:
     if (CyGame().getSorenRandNum(100, "Apocalypse") <= iPercent):
       if pUnit.isAlive():
-        pUnit.kill(False, PlayerTypes.NO_PLAYER)
         CyInterface().addMessage(iPlayer,True,25,CyTranslator().getText("TXT_KEY_MESSAGE_APOCALYPSE_KILLED", ()),'',1,'Art/Interface/Buttons/Apocalypse.dds',ColorTypes(7),pUnit.getX(),pUnit.getY(),True,True)
+        pUnit.kill(False, PlayerTypes.NO_PLAYER)
   if pPlayer.isHuman():
     t = "TROPHY_FEAT_APOCALYPSE"
     if not CyGame().isHasTrophy(t):

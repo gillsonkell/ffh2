@@ -8809,9 +8809,9 @@
         <SpellInfo>
             <Type>SPELL_CAST_GRANT_LIFE</Type>
             <Description>Grant Life</Description>
-            <Civilopedia>Grants an extra life to one unit lower than 15 base strength at the cost of a life promotion from the caster.</Civilopedia>
+            <Civilopedia>Grants an extra life to one living unit lower than 15 base strength at the cost of a life promotion from the caster.</Civilopedia>
             <Strategy>NONE</Strategy>
-            <Help>[ICON_BULLET]Grants an extra life to one unit lower than 15 base strength at the cost of a life promotion from the caster.</Help>
+            <Help>[ICON_BULLET]Grants an extra life to one living unit lower than 15 base strength at the cost of a life promotion from the caster.</Help>
             <PromotionPrereq1>PROMOTION_LIFE1</PromotionPrereq1>
             <PromotionPrereq2>NONE</PromotionPrereq2>
             <UnitPrereq>UNIT_CLERIC</UnitPrereq>
