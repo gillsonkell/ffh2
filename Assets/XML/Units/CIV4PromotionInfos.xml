@@ -21661,9 +21661,10 @@
         <PromotionInfo>
             <Type>PROMOTION_WALL_OF_STONE</Type>
             <Description>Wall of Stone</Description>
+            <Help>[ICON_BULLET]Removed after moving</Help>
             <Sound>AS2D_IF_LEVELUP</Sound>
-            <iMovesChange>-10</iMovesChange>
-            <iCombatPercent>35</iCombatPercent>
+            <iMovesChange>0</iMovesChange>
+            <iCombatPercent>0</iCombatPercent>
             <UnitCombats>
                 <UnitCombat>
                     <UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
@@ -21703,8 +21704,9 @@
                 </UnitCombat>
             </UnitCombats>
             <Button>Art/Interface/Buttons/Buildings/Wall.dds</Button>
-            <iCombatPercentDefense>35</iCombatPercentDefense>
             <bRemovedByCombat>1</bRemovedByCombat>
+            <iCombatPercentDefense>0</iCombatPercentDefense>
+            <iExtraCombatDefense>1</iExtraCombatDefense>
             <iMinLevel>-1</iMinLevel>
         </PromotionInfo>
         <PromotionInfo>

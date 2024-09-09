@@ -3274,6 +3274,15 @@ class CustomFunctions:
         pPlayer = gc.getPlayer(pUnit.getOwner())
         iUnitTeam = pPlayer.getTeam()
         unitTeam = gc.getTeam(iUnitTeam)
+        
+        ## Wall of Stone
+        if pUnit.isHasPromotion( gc.getInfoTypeForString('PROMOTION_WALL_OF_STONE') ):
+          if pPlot.getX() != self.getObjectInt( pUnit, 'lx' ) or pPlot.getY() != self.getObjectInt( pUnit, 'ly' ):
+            pUnit.setHasPromotion( gc.getInfoTypeForString('PROMOTION_WALL_OF_STONE'), False )
+          
+        ## Record Previous Unit Location  
+        self.setObjectInt( pUnit, 'lx', pPlot.getX() )
+        self.setObjectInt( pUnit, 'ly', pPlot.getY() )
 
         ## Unit Morale
         if pPlayer.isHuman():

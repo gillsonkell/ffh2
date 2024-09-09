@@ -1247,6 +1247,7 @@ class CvEventManager:
     pPlot,pUnit,pOldPlot = argsList
     player = PyPlayer(pUnit.getOwner())
     unitInfo = PyInfo.UnitInfo(pUnit.getUnitType())
+    
     if (not self.__LOG_MOVEMENT):
       return
     if player and unitInfo:
@@ -1276,10 +1277,12 @@ class CvEventManager:
       city = unit.plot().getPlotCity()
       pop = city.getPopulation()
     
+    if unit.getUnitClassType() == gc.getInfoTypeForString('UNITCLASS_SETTLER'):
+      unit.setDuration( CyGame().getSorenRandNum(50, "Settler Lifespan") + pop * 5 + 50 )
     if unit.getUnitClassType() == gc.getInfoTypeForString('UNITCLASS_WORKER'):
-      unit.setDuration( CyGame().getSorenRandNum(30, "Worker Lifespan") + pop * 5 )
+      unit.setDuration( CyGame().getSorenRandNum(30, "Worker Lifespan") + pop * 3 + 30 )
     if unit.getUnitClassType() == gc.getInfoTypeForString('UNITCLASS_SLAVE'):
-      unit.setDuration( CyGame().getSorenRandNum(30, "Slave Lifespan") + pop + 10 )
+      unit.setDuration( CyGame().getSorenRandNum(30, "Slave Lifespan") + pop + 15 )
     
 #Conquestmode for Heroes (still needed?)
 

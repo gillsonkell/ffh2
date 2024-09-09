@@ -1297,7 +1297,7 @@
             <Type>SPELL_EXPLORE_LAIR_AIFON_ISLE</Type>
             <Description>TXT_KEY_SPELL_EXPLORE_LAIR</Description>
             <Civilopedia>Levels, strength, drill, mobility, sentry and burglar promotions help the outcome of exploring a lair be better...</Civilopedia>
-            <Help>[ICON_BULLET]You have a ( lev + burgar skill x 2)% chance to find something special in this epic lair, it could be good or bad. ( Lev + Str + 3x burglar skill ) helps the outcome be good.</Help>
+            <Help>[ICON_BULLET]You have a ( lev + burglar skill x 2)% chance to find something special in this epic lair, it could be good or bad. ( Lev + Str + 3x burglar skill ) helps the outcome be good.</Help>
             <ImprovementPrereq>IMPROVEMENT_AIFON_ISLE</ImprovementPrereq>
             <bDisplayWhenDisabled>1</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
@@ -1314,7 +1314,7 @@
             <Type>SPELL_EXPLORE_LAIR_BARROW</Type>
             <Description>TXT_KEY_SPELL_EXPLORE_LAIR</Description>
             <Civilopedia>Levels, strength, drill, mobility, sentry and burglar promotions help the outcome of exploring a lair be better...</Civilopedia>
-            <Help>[ICON_BULLET]You have a ( lev + burgar skill x 5)% chance to find something special in this lair, it could be good or bad. ( Lev + Str + 3x burglar skill ) helps the outcome be good.</Help>
+            <Help>[ICON_BULLET]You have a ( lev + burglar skill x 5)% chance to find something special in this lair, it could be good or bad. ( Lev + Str + 3x burglar skill ) helps the outcome be good.</Help>
             <ImprovementPrereq>IMPROVEMENT_BARROW</ImprovementPrereq>
             <bDisplayWhenDisabled>1</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
@@ -1331,7 +1331,7 @@
             <Type>SPELL_EXPLORE_LAIR_SERPENT</Type>
             <Description>Explore the Serpent Lair</Description>
             <Civilopedia>Levels, strength, drill, mobility, sentry and burglar promotions help the outcome of exploring a lair be better...</Civilopedia>
-            <Help>[ICON_BULLET]You have a ( lev + burgar skill x 5)% chance to find something special in this lair, it could be good or bad. ( Lev + Str + 3x burglar skill ) helps the outcome be good.</Help>
+            <Help>[ICON_BULLET]You have a ( lev + burglar skill x 5)% chance to find something special in this lair, it could be good or bad. ( Lev + Str + 3x burglar skill ) helps the outcome be good.</Help>
             <ImprovementPrereq>IMPROVEMENT_SERPENT_LAIR</ImprovementPrereq>
             <bDisplayWhenDisabled>1</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
@@ -1348,7 +1348,7 @@
             <Type>SPELL_EXPLORE_LAIR_BRADELINES_WELL</Type>
             <Description>TXT_KEY_SPELL_EXPLORE_LAIR</Description>
             <Civilopedia>Levels, strength, drill, mobility, sentry and burglar promotions help the outcome of exploring a lair be better...</Civilopedia>
-            <Help>[ICON_BULLET]You have a ( lev + burgar skill x 2)% chance to find something special in this epic lair, it could be good or bad. ( Lev + Str + 3x burglar skill ) helps the outcome be good.</Help>
+            <Help>[ICON_BULLET]You have a ( lev + burglar skill x 2)% chance to find something special in this epic lair, it could be good or bad. ( Lev + Str + 3x burglar skill ) helps the outcome be good.</Help>
             <ImprovementPrereq>IMPROVEMENT_BRADELINES_WELL</ImprovementPrereq>
             <bDisplayWhenDisabled>1</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
@@ -1365,7 +1365,7 @@
             <Type>SPELL_EXPLORE_LAIR_BROKEN_SEPULCHER</Type>
             <Description>TXT_KEY_SPELL_EXPLORE_LAIR</Description>
             <Civilopedia>Levels, strength, drill, mobility, sentry and burglar promotions help the outcome of exploring a lair be better...</Civilopedia>
-            <Help>[ICON_BULLET]You have a ( lev + burgar skill x 2)% chance to find something special in this epic lair, it could be good or bad. ( Lev + Str + 3x burglar skill ) helps the outcome be good.</Help>
+            <Help>[ICON_BULLET]You have a ( lev + burglar skill x 2)% chance to find something special in this epic lair, it could be good or bad. ( Lev + Str + 3x burglar skill ) helps the outcome be good.</Help>
             <ImprovementPrereq>IMPROVEMENT_BROKEN_SEPULCHER</ImprovementPrereq>
             <bDisplayWhenDisabled>1</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
@@ -1382,7 +1382,7 @@
             <Type>SPELL_EXPLORE_LAIR_DUNGEON</Type>
             <Description>TXT_KEY_SPELL_EXPLORE_LAIR</Description>
             <Civilopedia>Levels, strength, drill, mobility, sentry and burglar promotions help the outcome of exploring a lair be better...</Civilopedia>
-            <Help>[ICON_BULLET]You have a ( lev + burgar skill x 5)% chance to find something special in this lair, it could be good or bad. ( Lev + Str + 3x burglar skill ) helps the outcome be good.</Help>
+            <Help>[ICON_BULLET]You have a ( lev + burglar skill x 5)% chance to find something special in this lair, it could be good or bad. ( Lev + Str + 3x burglar skill ) helps the outcome be good.</Help>
             <ImprovementPrereq>IMPROVEMENT_DUNGEON</ImprovementPrereq>
             <bDisplayWhenDisabled>1</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
@@ -1399,7 +1399,7 @@
             <Type>SPELL_EXPLORE_LAIR_GOBLIN_FORT</Type>
             <Description>TXT_KEY_SPELL_EXPLORE_LAIR</Description>
             <Civilopedia>Levels, strength, drill, mobility, sentry and burglar promotions help the outcome of exploring a lair be better...</Civilopedia>
-            <Help>[ICON_BULLET]You have a ( lev + burgar skill x 5)% chance to find something special in this lair, it could be good or bad. ( Lev + Str + 3x burglar skill ) helps the outcome be good.</Help>
+            <Help>[ICON_BULLET]You have a ( lev + burglar skill x 5)% chance to find something special in this lair, it could be good or bad. ( Lev + Str + 3x burglar skill ) helps the outcome be good.</Help>
             <ImprovementPrereq>IMPROVEMENT_GOBLIN_FORT</ImprovementPrereq>
             <bDisplayWhenDisabled>1</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
@@ -1416,7 +1416,7 @@
             <Type>SPELL_EXPLORE_LAIR_PYRE_OF_THE_SERAPHIC</Type>
             <Description>TXT_KEY_SPELL_EXPLORE_LAIR</Description>
             <Civilopedia>Levels, strength, drill, mobility, sentry and burglar promotions help the outcome of exploring a lair be better...</Civilopedia>
-            <Help>[ICON_BULLET]You have a ( lev + burgar skill x 2)% chance to find something special in this epic lair, it could be good or bad. ( Lev + Str + 3x burglar skill ) helps the outcome be good.</Help>
+            <Help>[ICON_BULLET]You have a ( lev + burglar skill x 2)% chance to find something special in this epic lair, it could be good or bad. ( Lev + Str + 3x burglar skill ) helps the outcome be good.</Help>
             <ImprovementPrereq>IMPROVEMENT_PYRE_OF_THE_SERAPHIC</ImprovementPrereq>
             <bDisplayWhenDisabled>1</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
@@ -1433,7 +1433,7 @@
             <Type>SPELL_EXPLORE_LAIR_RUINS</Type>
             <Description>TXT_KEY_SPELL_EXPLORE_LAIR</Description>
             <Civilopedia>Levels, strength, drill, mobility, sentry and burglar promotions help the outcome of exploring a lair be better...</Civilopedia>
-            <Help>[[ICON_BULLET]You have a ( lev + burgar skill x 5)% chance to find something special in this lair, it could be good or bad. ( Lev + Str + 3x burglar skill ) helps the outcome be good.</Help>
+            <Help>[[ICON_BULLET]You have a ( lev + burglar skill x 5)% chance to find something special in this lair, it could be good or bad. ( Lev + Str + 3x burglar skill ) helps the outcome be good.</Help>
             <ImprovementPrereq>IMPROVEMENT_RUINS</ImprovementPrereq>
             <bDisplayWhenDisabled>1</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
@@ -1450,7 +1450,7 @@
             <Type>SPELL_EXPLORE_LAIR_SHIP_WRECK</Type>
             <Description>TXT_KEY_SPELL_EXPLORE_LAIR</Description>
             <Civilopedia>Levels, strength, drill, mobility, sentry and burglar promotions help the outcome of exploring a lair be better...</Civilopedia>
-            <Help>[ICON_BULLET]You have a ( lev + burgar skill x 5)% chance to find something special in this lair, it could be good or bad. ( Lev + Str + 3x burglar skill ) helps the outcome be good.</Help>
+            <Help>[ICON_BULLET]You have a ( lev + burglar skill x 5)% chance to find something special in this lair, it could be good or bad. ( Lev + Str + 3x burglar skill ) helps the outcome be good.</Help>
             <ImprovementPrereq>IMPROVEMENT_SHIP_WRECK</ImprovementPrereq>
             <bDisplayWhenDisabled>1</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
@@ -8061,7 +8061,7 @@
             <Civilopedia></Civilopedia>
             <Strategy>NONE</Strategy>
             <Help>[ICON_BULLET]Leave the Wall of Stone!</Help>
-            <PromotionPrereq1>PROMOTION_WALL_OF_STONE</PromotionPrereq1>
+            <PromotionPrereq1>NONE</PromotionPrereq1>
             <PromotionPrereq2>NONE</PromotionPrereq2>
             <UnitPrereq>NONE</UnitPrereq>
             <UnitClassPrereq>NONE</UnitClassPrereq>
@@ -8070,7 +8070,7 @@
             <CivilizationPrereq>NONE</CivilizationPrereq>
             <ReligionPrereq>NONE</ReligionPrereq>
             <StateReligionPrereq>NONE</StateReligionPrereq>
-            <TechPrereq>NONE</TechPrereq>
+            <TechPrereq>TECH_NEVER</TechPrereq>
             <bAllowAI>0</bAllowAI>
             <bAdjacentToWaterOnly>0</bAdjacentToWaterOnly>
             <bCausesWar>0</bCausesWar>
@@ -8091,7 +8091,7 @@
             <AddPromotionType1>NONE</AddPromotionType1>
             <AddPromotionType2>NONE</AddPromotionType2>
             <AddPromotionType3>NONE</AddPromotionType3>
-            <RemovePromotionType1>PROMOTION_WALL_OF_STONE</RemovePromotionType1>
+            <RemovePromotionType1>NONE</RemovePromotionType1>
             <RemovePromotionType2>NONE</RemovePromotionType2>
             <RemovePromotionType3>NONE</RemovePromotionType3>
             <bBuffCasterOnly>1</bBuffCasterOnly>
