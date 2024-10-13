@@ -3896,6 +3896,10 @@ class CustomFunctions:
           iGiveXP = 25
         if pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_HERO')):
           iGiveXP = 2
+          if CyGame().getGameSpeedType() == gc.getInfoTypeForString('GAMESPEED_EPIC'):
+            iGiveXP = 3
+          if CyGame().getGameSpeedType() == gc.getInfoTypeForString('GAMESPEED_MARATHON'):
+            iGiveXP = 4
         if iThisPlotTrainAnimal > 0 and iGiveXP > 5 and (pUnit.getUnitCombatType() == gc.getInfoTypeForString('UNITCOMBAT_ANIMAL') or pUnit.getRace() == gc.getInfoTypeForString('PROMOTION_ORC') or pUnit.getRace() == gc.getInfoTypeForString('PROMOTION_LIZARDMAN')):
           iThisPlotTrainAnimal -= 1
           iGiveXP = 5
