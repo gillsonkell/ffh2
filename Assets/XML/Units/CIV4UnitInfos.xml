@@ -48889,6 +48889,7 @@
             </FreePromotions>
             <LeaderPromotion>NONE</LeaderPromotion>
             <iLeaderExperience>0</iLeaderExperience>
+            <bFreeXP>1</bFreeXP>
             <iCombatDefense>4</iCombatDefense>
             <iTier>2</iTier>
             <iWeaponTier>3</iWeaponTier>
@@ -66266,7 +66267,7 @@
             <iAirUnitCap>0</iAirUnitCap>
             <iDropRange>0</iDropRange>
             <iNukeRange>-1</iNukeRange>
-            <iWorkRate>120</iWorkRate>
+            <iWorkRate>50</iWorkRate>
             <iBaseDiscover>0</iBaseDiscover>
             <iDiscoverMultiplier>0</iDiscoverMultiplier>
             <iBaseHurry>0</iBaseHurry>
