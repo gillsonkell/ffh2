@@ -1277,8 +1277,8 @@ class CvEventManager:
       city = unit.plot().getPlotCity()
       pop = city.getPopulation()
     
-    if unit.getUnitClassType() == gc.getInfoTypeForString('UNITCLASS_SETTLER'):
-      unit.setDuration( CyGame().getSorenRandNum(50, "Settler Lifespan") + pop * 5 + 50 )
+    # if unit.getUnitClassType() == gc.getInfoTypeForString('UNITCLASS_SETTLER'):
+    #   unit.setDuration( CyGame().getSorenRandNum(50, "Settler Lifespan") + pop * 5 + 50 )
     if unit.getUnitClassType() == gc.getInfoTypeForString('UNITCLASS_WORKER'):
       unit.setDuration( CyGame().getSorenRandNum(30, "Worker Lifespan") + pop * 3 + 30 )
     if unit.getUnitClassType() == gc.getInfoTypeForString('UNITCLASS_SLAVE'):
