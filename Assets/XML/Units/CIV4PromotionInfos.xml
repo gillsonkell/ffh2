@@ -724,6 +724,7 @@
             <Description>TXT_KEY_PROMOTION_BRONZE_WEAPONS</Description>
             <Sound>AS2D_IF_LEVELUP</Sound>
             <Button>Art/Interface/Buttons/Promotions/Bronzeweapons.dds</Button>
+            <iWorkRateModify>10</iWorkRateModify>
             <iExtraCombatStr>1</iExtraCombatStr>
             <iExtraCombatDefense>1</iExtraCombatDefense>
             <iMinLevel>-1</iMinLevel>
@@ -4675,6 +4676,7 @@
             <Sound>AS2D_IF_LEVELUP</Sound>
             <TechPrereq>TECH_NEVER</TechPrereq>
             <Button>Art/Interface/Buttons/Promotions/Ironweapons.dds</Button>
+            <iWorkRateModify>20</iWorkRateModify>
             <iExtraCombatStr>2</iExtraCombatStr>
             <iExtraCombatDefense>2</iExtraCombatDefense>
             <iMinLevel>-1</iMinLevel>
@@ -5832,6 +5834,7 @@
             <Sound>AS2D_IF_LEVELUP</Sound>
             <TechPrereq>TECH_NEVER</TechPrereq>
             <Button>Art/Interface/Buttons/Promotions/Mithrilweapons.dds</Button>
+            <iWorkRateModify>30</iWorkRateModify>
             <iExtraCombatStr>4</iExtraCombatStr>
             <iExtraCombatDefense>4</iExtraCombatDefense>
             <iMinLevel>-1</iMinLevel>

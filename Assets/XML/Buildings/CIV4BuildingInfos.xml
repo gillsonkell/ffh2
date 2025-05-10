@@ -36192,7 +36192,7 @@
             <Bonus>NONE</Bonus>
             <PrereqBonuses>
                     <BonusType>BONUS_MANA_BODY</BonusType>
-                    <BonusType>BONUS_MANA_LIFE</BonusType>
+                    <BonusType>BONUS_MANA_DIMENSIONAL</BonusType>
                     <BonusType>BONUS_MANA_ENCHANTMENT</BonusType>
                     <BonusType>BONUS_MANA_NATURE</BonusType>
             </PrereqBonuses>
@@ -36635,6 +36635,7 @@
             </TechTypes>
             <Bonus>NONE</Bonus>
             <PrereqBonuses>
+                    <BonusType>BONUS_MANA_LIFE</BonusType>
                     <BonusType>BONUS_MANA_LAW</BonusType>
                     <BonusType>BONUS_MANA_SUN</BonusType>
                     <BonusType>BONUS_MANA_SPIRIT</BonusType>

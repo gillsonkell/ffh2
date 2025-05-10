@@ -5050,6 +5050,28 @@ def spellSummonScroll(caster,sUnit,mode):
     
   for i in range(iL):
     newUnit = bPlayer.initUnit(gc.getInfoTypeForString(sUnit), iX, iY, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+    
+    if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_SUMMONER')):
+      newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_COMBAT1'),True)
+    if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_SUMMONING')):
+      newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_COMBAT2'),True)
+    if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_COMBAT1')):
+      newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_EMPOWER1'),True)
+    if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_COMBAT2')):
+      newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_EMPOWER2'),True)
+    if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_COMBAT3')):
+      newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_EMPOWER3'),True)
+    if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_COMBAT4')):
+      newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_EMPOWER4'),True)
+    if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_COMBAT5')):
+      newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_EMPOWER5'),True)
+    if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_EXTENSION1')):
+      newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_MOBILITY1'),True)
+    if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_EXTENSION2')):
+      newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_MOBILITY2'),True)
+    if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_SUNDERED')):
+      newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_STIGMATA'),True)
+    
     if (sUnit == 'UNIT_MAGIC_MISSILE' or sUnit == 'UNIT_FIREBALL' or sUnit == 'UNIT_METEOR'):
       newUnit.setDuration(1)
     else:
@@ -5062,27 +5084,6 @@ def spellSummonScroll(caster,sUnit,mode):
         iDur += 1
       
       newUnit.setDuration(iDur)
-
-      if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_SUMMONER')):
-        newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_COMBAT1'),True)
-      if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_SUMMONING')):
-        newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_COMBAT2'),True)
-      if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_COMBAT1')):
-        newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_EMPOWER1'),True)
-      if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_COMBAT2')):
-        newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_EMPOWER2'),True)
-      if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_COMBAT3')):
-        newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_EMPOWER3'),True)
-      if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_COMBAT4')):
-        newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_EMPOWER4'),True)
-      if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_COMBAT5')):
-        newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_EMPOWER5'),True)
-      if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_EXTENSION1')):
-        newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_MOBILITY1'),True)
-      if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_EXTENSION2')):
-        newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_MOBILITY2'),True)
-      if caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_SUNDERED')):
-        newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_STIGMATA'),True)
 
       if ssUnit == 'x':
         if mode == 'caster':

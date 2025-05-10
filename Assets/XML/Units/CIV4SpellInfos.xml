@@ -434,7 +434,7 @@
             <bDisplayWhenDisabled>1</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
             <CreateFeatureType>FEATURE_FOREST_NEW</CreateFeatureType>
-            <iDelay>4</iDelay>
+            <iDelay>6</iDelay>
             <Effect>EFFECT_BLOOM</Effect>
             <Sound>AS3D_SPELL_BLOOM</Sound>
             <Button>Art/Interface/Buttons/Spells/Bloom.dds</Button>
