@@ -5089,7 +5089,7 @@ def spellSummonScroll(caster,sUnit,mode):
         if mode == 'caster':
           newUnit.setDuration(newUnit.getDuration()/2)
           caster.changeDamage(10,0)
-        i = caster.getLevel() / 2 + 1
+        i = caster.getLevel() / 3 + 3
         newUnit.setBaseCombatStr( i )
         newUnit.setBaseCombatStrDefense( i )
         
