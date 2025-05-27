@@ -2458,7 +2458,7 @@
             <Type>SPELL_SUMMON_ELEMENTAL</Type>
             <Description>Summon Minor Elemental</Description>
             <Civilopedia></Civilopedia>
-            <Help>[ICON_BULLET]Summons a minor elemental whose strength is equal to 1 + caster's level / 2.[NEWLINE][ICON_BULLET]Does 10 exertion damage to the caster.</Help>
+            <Help>[ICON_BULLET]Summons a minor elemental whose strength is equal to 3 + caster's level / 3.[NEWLINE][ICON_BULLET]Does 10 exertion damage to the caster.</Help>
             <PromotionPrereq1>PROMOTION_CAST_SUMMON_KIKIJIB</PromotionPrereq1>
             <PromotionPrereq2></PromotionPrereq2>
             <bAllowAI>0</bAllowAI>
@@ -10683,7 +10683,7 @@
             <Description>Use Scroll of Mana Missile</Description>
             <Civilopedia></Civilopedia>
             <Strategy>NONE</Strategy>
-            <Help>[ICON_BULLET]Hurls (level / 3 + 1) mana missiles.</Help>
+            <Help>[ICON_BULLET]Hurls a mana missile.</Help>
             <PromotionPrereq1>PROMOTION_SCROLL_MM</PromotionPrereq1>
             <PromotionPrereq2>NONE</PromotionPrereq2>
             <UnitPrereq>NONE</UnitPrereq>
@@ -10757,7 +10757,7 @@
             <Description>Use Item Scroll of Mana Missile</Description>
             <Civilopedia></Civilopedia>
             <Strategy>NONE</Strategy>
-            <Help>[ICON_BULLET]Hurls (level / 3 + 1) mana missiles.</Help>
+            <Help>[ICON_BULLET]Hurls a mana missile.</Help>
             <PromotionPrereq1>PROMOTION_SCROLL_MM</PromotionPrereq1>
             <PromotionPrereq2>PROMOTION_BURGLAR1</PromotionPrereq2>
             <UnitPrereq>NONE</UnitPrereq>
@@ -10979,7 +10979,7 @@
             <Description>Use Scroll of Summon Minor Elemental</Description>
             <Civilopedia></Civilopedia>
             <Strategy>NONE</Strategy>
-            <Help>[ICON_BULLET]Summons a minor elemental whose strength is equal to 1 + caster's level / 2.</Help>
+            <Help>[ICON_BULLET]Summons a minor elemental whose strength is equal to 3 + caster's level / 3.</Help>
             <PromotionPrereq1>PROMOTION_SCROLL_SB</PromotionPrereq1>
             <PromotionPrereq2>NONE</PromotionPrereq2>
             <UnitPrereq>NONE</UnitPrereq>
@@ -11053,7 +11053,7 @@
             <Description>Use Item Scroll of Summon Minor Elemental</Description>
             <Civilopedia></Civilopedia>
             <Strategy>NONE</Strategy>
-            <Help>[ICON_BULLET]Summons a minor elemental whose strength is equal to 1 + caster's level / 2.</Help>
+            <Help>[ICON_BULLET]Summons a minor elemental whose strength is equal to 3 + caster's level / 3.</Help>
             <PromotionPrereq1>PROMOTION_SCROLL_SB</PromotionPrereq1>
             <PromotionPrereq2>PROMOTION_BURGLAR1</PromotionPrereq2>
             <UnitPrereq>NONE</UnitPrereq>
