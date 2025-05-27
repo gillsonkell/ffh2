@@ -5040,7 +5040,7 @@ def spellSummonScroll(caster,sUnit,mode):
   
   if sUnit == 'UNIT_MAGIC_MISSILE':
     if mode == 'scroll':
-      iL = int( caster.getLevel() / 3 ) + 1
+      iL = 1
     else: 
       iL = int( caster.getLevel() / 3 )
       caster.changeDamage(10,0)

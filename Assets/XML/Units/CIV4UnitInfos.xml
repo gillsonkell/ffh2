@@ -75861,7 +75861,7 @@
             <bFound>0</bFound>
             <bGoldenAge>0</bGoldenAge>
             <bInvisible>0</bInvisible>
-            <bFirstStrikeImmune>1</bFirstStrikeImmune>
+            <bFirstStrikeImmune>0</bFirstStrikeImmune>
             <bNoDefensiveBonus>0</bNoDefensiveBonus>
             <bIgnoreBuildingDefense>0</bIgnoreBuildingDefense>
             <bCanMoveImpassable>1</bCanMoveImpassable>
@@ -75960,13 +75960,13 @@
             </TerrainPassableTechs>
             <FeaturePassableTechs>
             </FeaturePassableTechs>
-            <iCombat>0</iCombat>
+            <iCombat>1</iCombat>
             <iCombatLimit>100</iCombatLimit>
             <iAirCombat>0</iAirCombat>
             <iAirCombatLimit>0</iAirCombatLimit>
             <iXPValueAttack>0</iXPValueAttack>
             <iXPValueDefense>0</iXPValueDefense>
-            <iFirstStrikes>5</iFirstStrikes>
+            <iFirstStrikes>0</iFirstStrikes>
             <iChanceFirstStrikes>0</iChanceFirstStrikes>
             <iInterceptionProbability>0</iInterceptionProbability>
             <iEvasionProbability>0</iEvasionProbability>
@@ -76059,7 +76059,7 @@
             <bImmortal>0</bImmortal>
             <bNeverObsolete>0</bNeverObsolete>
             <bNoWarWeariness>1</bNoWarWeariness>
-            <iCombatDefense>0</iCombatDefense>
+            <iCombatDefense>1</iCombatDefense>
             <iDurationFromCombat>0</iDurationFromCombat>
             <iEnslavementChance>0</iEnslavementChance>
             <iFreePromotionPick>0</iFreePromotionPick>
@@ -76080,10 +76080,6 @@
             <Image>NONE</Image>
             <PythonPostCombatLost>postCombatDamage(pCaster,pOpponent,5,100,'DAMAGE_LIGHTNING')</PythonPostCombatLost>
             <DamageTypeCombats>
-                <DamageTypeCombat>
-                    <DamageType>DAMAGE_LIGHTNING</DamageType>
-                    <iCombat>1</iCombat>
-                </DamageTypeCombat>
             </DamageTypeCombats>
             <BonusAffinities>
             </BonusAffinities>
