@@ -3965,14 +3965,16 @@ class CustomFunctions:
 
         ## Animals can have young
         if pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_PROLIFIC3')):
-          iBirth = 5
+          iBirth = 7
         elif pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_PROLIFIC2')):  
-          iBirth = 3
+          iBirth = 4
         elif pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_PROLIFIC')): 
           iBirth = 2
         else:
           if pPlayer.isHuman():
             iBirth = 0
+            if pUnit.getLevel() > 4:
+              iBirth = 1
           else:
             iBirth = pUnit.getLevel() - 5
             
