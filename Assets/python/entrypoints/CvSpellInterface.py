@@ -5309,6 +5309,8 @@ def spellVolley(caster,volleytype):
           CyAudioGame().Play3DSound('AS3D_UN_SIX_SHOT_FIRE',point.x,point.y,point.z)
         elif caster.getUnitCombatType() == gc.getInfoTypeForString('UNITCOMBAT_SIEGE'):
           CyAudioGame().Play3DSound('AS3D_UN_CATAPULT_STRIKE',point.x,point.y,point.z)
+        elif caster.getUnitCombatType() == gc.getInfoTypeForString('UNITCOMBAT_BEAST'):
+          CyEngine().triggerEffect(gc.getInfoTypeForString('EFFECT_SPRING'),point)
         
       if volleytype == 'adept':
         ## Alteration Manas: Nature, Dimensional, Body, Enchantment
@@ -5734,6 +5736,31 @@ def spellHaste(caster):
         iNumBlessed = iNumBlessed + 1
         if (iNumBlessed >= iL):
           return
+
+def spellWalkWithWalker(caster):
+  iNumBlessed = 0
+  iL = caster.getLevel()
+  pPlot = caster.plot()
+  if not caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_WATER3')):
+    iL = int( iL / 2 )
+  
+  caster.setHasPromotion(gc.getInfoTypeForString('PROMOTION_WATER_WALKING'),True)
+  
+  for i in range(pPlot.getNumUnits()):
+    pUnit = pPlot.getUnit(i)
+    if pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_DROWNING')):
+      iNumBlessed += 1
+      pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_DROWNING'),False)
+    if (iNumBlessed >= iL):
+     return
+          
+  for i in range(pPlot.getNumUnits()):
+    pUnit = pPlot.getUnit(i)
+    if not pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_WATER_WALKING')) and not pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_WALK_WITH_WATER_WALKER')) and not pUnit.isFlying() and not pUnit.isCargo() and not pUnit.getDomainType() == gc.getInfoTypeForString('DOMAIN_SEA'):
+      iNumBlessed += 1
+      pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_WALK_WITH_WATER_WALKER'),True)
+    if (iNumBlessed >= iL):
+     return
 
 def reqBlur(caster):
   pPlot = caster.plot()

@@ -4764,12 +4764,14 @@
             <Type>SPELL_WATER_WALKING</Type>
             <Description>TXT_KEY_SPELL_WATER_WALKING</Description>
             <Civilopedia>TXT_KEY_SPELL_WATER_WALKING_PEDIA</Civilopedia>
+            <Help>Allows the caster to walk on water.  Also will allow 1/2 level units (full level for Water III) to walk with them.  However, it must be cast on the units every turn while they are water walking or they will begin drowning (100% damage - 10% per level).</Help>
             <PromotionPrereq1>PROMOTION_WATER2</PromotionPrereq1>
             <bAllowAI>1</bAllowAI>
             <bDisplayWhenDisabled>0</bDisplayWhenDisabled>
             <bHasCasted>1</bHasCasted>
-            <AddPromotionType1>PROMOTION_WATER_WALKING</AddPromotionType1>
-            <bBuffCasterOnly>1</bBuffCasterOnly>
+            <AddPromotionType1></AddPromotionType1>
+            <bBuffCasterOnly>0</bBuffCasterOnly>
+            <PyResult>spellWalkWithWalker(pCaster)</PyResult>
             <Effect>EFFECT_CREATION</Effect>
             <Sound>AS3D_SPELL_WATER</Sound>
             <Button>Art/Interface/Buttons/Promotions/Waterwalking.dds</Button>

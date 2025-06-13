@@ -3280,6 +3280,25 @@ class CustomFunctions:
           if pPlot.getX() != self.getObjectInt( pUnit, 'lx' ) or pPlot.getY() != self.getObjectInt( pUnit, 'ly' ):
             pUnit.setHasPromotion( gc.getInfoTypeForString('PROMOTION_WALL_OF_STONE'), False )
           
+        ## Drowning
+        if pUnit.isHasPromotion( gc.getInfoTypeForString('PROMOTION_DROWNING') ):
+          if pUnit.isCargo() or not pPlot.isWater() or pUnit.isFlying() or pUnit.getDomainType() == gc.getInfoTypeForString('DOMAIN_SEA'):
+            pUnit.setHasPromotion( gc.getInfoTypeForString('PROMOTION_DROWNING'), False )
+          else:
+            iDam = 100 - pUnit.getLevel() * 10
+            if iDam > 0:
+              pUnit.changeDamage( iDam, pUnit.getOwner() ) 
+              if iDam > 0:
+                CyInterface().addMessage(pUnit.getOwner(),false,25,'Your '+pUnit.getName()+' takes '+str(iDam)+' damage from drowning...','',1,'Art/Interface/Buttons/Promotions/flying.dds',ColorTypes(7),pUnit.getX(),pUnit.getY(),True,True)
+                CyInterface().addCombatMessage(pUnit.getOwner(),'Your '+pUnit.getName()+' takes '+str(iDam)+' damage from drowning...')
+          
+        ## Water Walking with a Water Walker
+        if pUnit.isHasPromotion( gc.getInfoTypeForString('PROMOTION_WALK_WITH_WATER_WALKER') ):
+          if pUnit.isCargo() or not pPlot.isWater() or pUnit.isFlying() or pUnit.getDomainType() == gc.getInfoTypeForString('DOMAIN_SEA'):
+            pUnit.setHasPromotion( gc.getInfoTypeForString('PROMOTION_WALK_WITH_WATER_WALKER'), False )
+          else:
+            pUnit.setHasPromotion( gc.getInfoTypeForString('PROMOTION_DROWNING'), True )
+          
         ## Record Previous Unit Location  
         self.setObjectInt( pUnit, 'lx', pPlot.getX() )
         self.setObjectInt( pUnit, 'ly', pPlot.getY() )
@@ -3935,6 +3954,16 @@ class CustomFunctions:
         if pUnit.getUnitType() == gc.getInfoTypeForString('UNIT_GIANT_SEA_SERPENT') and pPlayer.getUnitClassCount(gc.getInfoTypeForString('UNITCLASS_GIANT_SEA_SERPENT')) > 60 and pUnit.getLevel() < 5:
           pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_TREASURE1'), False)
           pUnit.kill(True,0)
+          
+        ## Sea Serpents and Giant Sea Serpents have random strength  
+        if pUnit.getUnitType() == gc.getInfoTypeForString('UNIT_SEA_SERPENT') and self.getObjectInt(pUnit,'ss') == 0:
+          self.setObjectInt(pUnit,'ss',1)
+          pUnit.setBaseCombatStr( CyGame().getSorenRandNum(4, "NewSerpentStr") + 6 )
+          pUnit.setBaseCombatStrDefense( CyGame().getSorenRandNum(4, "NewSerpentDef") + 6 )
+        if pUnit.getUnitType() == gc.getInfoTypeForString('UNIT_GIANT_SEA_SERPENT') and self.getObjectInt(pUnit,'gss') == 0:
+          self.setObjectInt(pUnit,'gss',1)
+          pUnit.setBaseCombatStr( CyGame().getSorenRandNum(5, "NewSerpentStr") + 9 )
+          pUnit.setBaseCombatStrDefense( CyGame().getSorenRandNum(5, "NewSerpentDef") + 9 )
 
         ## Angels become evil if owned by an evil player...
         if pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_ANGEL')) and pPlayer.getAlignment() == iEvil and not pUnit.getUnitType() == gc.getInfoTypeForString('UNIT_BRIGIT_HELD') and pUnit.getDuration() < 1:
