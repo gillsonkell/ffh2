@@ -4883,6 +4883,8 @@
             <Type>PROMOTION_LIFE1</Type>
             <Description>TXT_KEY_PROMOTION_LIFE1</Description>
             <Sound>AS2D_IF_LEVELUP</Sound>
+            <iSameTileHealChange>1</iSameTileHealChange>
+            <iAdjacentTileHealChange>1</iAdjacentTileHealChange>
             <UnitCombats>
                 <UnitCombat>
                     <UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
@@ -4937,6 +4939,8 @@
             <Description>TXT_KEY_PROMOTION_LIFE2</Description>
             <Sound>AS2D_IF_LEVELUP</Sound>
             <PromotionPrereq>PROMOTION_LIFE1</PromotionPrereq>
+            <iSameTileHealChange>2</iSameTileHealChange>
+            <iAdjacentTileHealChange>2</iAdjacentTileHealChange>
             <UnitCombats>
                 <UnitCombat>
                     <UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>
@@ -4990,6 +4994,8 @@
             <Description>TXT_KEY_PROMOTION_LIFE3</Description>
             <Sound>AS2D_IF_LEVELUP</Sound>
             <PromotionPrereq>PROMOTION_LIFE2</PromotionPrereq>
+            <iSameTileHealChange>3</iSameTileHealChange>
+            <iAdjacentTileHealChange>3</iAdjacentTileHealChange>
             <UnitCombats>
                 <UnitCombat>
                     <UnitCombatType>UNITCOMBAT_ADEPT</UnitCombatType>

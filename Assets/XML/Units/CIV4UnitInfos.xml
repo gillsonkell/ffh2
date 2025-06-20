@@ -89584,7 +89584,7 @@
             <Invisible>NONE</Invisible>
             <SeeInvisible>NONE</SeeInvisible>
             <Description>Goblin Horde</Description>
-            <Civilopedia></Civilopedia>
+            <Civilopedia>[ICON_BULLET]When led by the Goblin King (Leadership), this unit will enter into a Vampiric Blood Fury!</Civilopedia>
             <Strategy></Strategy>
             <Advisor>ADVISOR_GROWTH</Advisor>
             <bAnimal>0</bAnimal>
@@ -89679,7 +89679,7 @@
             <iAdvancedStartCost>100</iAdvancedStartCost>
             <iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
             <iMinAreaSize>-1</iMinAreaSize>
-            <iMoves>1</iMoves>
+            <iMoves>2</iMoves>
             <bNoRevealMap>0</bNoRevealMap>
             <iAirRange>0</iAirRange>
             <iAirUnitCap>0</iAirUnitCap>

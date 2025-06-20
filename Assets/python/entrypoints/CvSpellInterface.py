@@ -4237,11 +4237,11 @@ def spellCommandMorale(caster):
   iBlessAll = 1
   if not caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_COMMANDER1')):
     iBlessAll = 0
-  UnitType = caster.getUnitType()
-  if caster.getUnitType() == gc.getInfoTypeForString('UNIT_MARDERO'):
-    UnitType = gc.getInfoTypeForString('UNIT_SUCCUBUS')
-  if caster.getUnitType() == gc.getInfoTypeForString('UNIT_LUCIAN'):
-    UnitType = gc.getInfoTypeForString('UNIT_BEASTMAN')
+    UnitType = caster.getUnitType()
+    if caster.getUnitType() == gc.getInfoTypeForString('UNIT_MARDERO'):
+      UnitType = gc.getInfoTypeForString('UNIT_SUCCUBUS')
+    if caster.getUnitType() == gc.getInfoTypeForString('UNIT_LUCIAN'):
+      UnitType = gc.getInfoTypeForString('UNIT_BEASTMAN')
 
   pPlot = caster.plot()
   for i in range(pPlot.getNumUnits()):
@@ -4249,6 +4249,8 @@ def spellCommandMorale(caster):
     if not (pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_COMMAND_MORALE'))):
       if (iBlessAll == 1 or UnitType == pUnit.getUnitType()):
         pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_COMMAND_MORALE'),True)
+        if caster.getUnitType() == gc.getInfoTypeForString('UNIT_GOBLIN_ELITE') and caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_ANCIENT')) == True and pUnit.getUnitType() == gc.getInfoTypeForString('UNIT_GOBLIN_HORDE'):
+          pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_VAMPIRIC_TEMP'),True)
         iNumBlessed = iNumBlessed - 1
         iBlessed = iBlessed + 1
         if (iNumBlessed < 1):
@@ -4263,6 +4265,8 @@ def spellCommandMorale(caster):
           if not pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_COMMAND_MORALE')) and caster.getTeam() == pUnit.getTeam():
             if (iBlessAll == 1 or UnitType == pUnit.getUnitType()):
               pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_COMMAND_MORALE'),True)
+              if caster.getUnitType() == gc.getInfoTypeForString('UNIT_GOBLIN_ELITE') and caster.isHasPromotion(gc.getInfoTypeForString('PROMOTION_ANCIENT')) == True and pUnit.getUnitType() == gc.getInfoTypeForString('UNIT_GOBLIN_HORDE'):
+                pUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_VAMPIRIC_TEMP'),True)
               iNumBlessed = iNumBlessed - 1
               iBlessed = iBlessed + 1
               if (iNumBlessed < 1):
@@ -5520,7 +5524,6 @@ def spellVolley(caster,volleytype):
             CyEngine().triggerEffect(gc.getInfoTypeForString('EFFECT_SPELL1'),point)
             CyAudioGame().Play3DSound('AS3D_SPELL_CHARM_PERSON',point.x,point.y,point.z)
         
-
 
 def reqBlessMinorUndead(caster):
   if caster.getLevel() < 13:
