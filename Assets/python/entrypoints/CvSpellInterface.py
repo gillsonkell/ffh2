@@ -3634,6 +3634,19 @@ def reqWorkerType(caster):
     return True
   return False
 
+def reqWorkerTypeSnow(caster):
+  pPlot = caster.plot()
+  if pPlot.getTerrainType() == gc.getInfoTypeForString('TERRAIN_SNOW') or pPlot.getTerrainType() == gc.getInfoTypeForString('TERRAIN_TUNDRA'):
+    if caster.getUnitClassType() == gc.getInfoTypeForString('UNITCLASS_WORKER'):
+      return True
+    if caster.getUnitClassType() == gc.getInfoTypeForString('UNITCLASS_SLAVE'):
+      return True
+  return False
+
+def spellHuntingGrounds(caster):
+  pPlot = caster.plot()
+  pPlot.setImprovementType(gc.getInfoTypeForString('IMPROVEMENT_JUNGLE_FARM'))
+
 def reqVeilOfNight(caster):
   pPlayer = gc.getPlayer(caster.getOwner())
   if pPlayer.isHuman() == False:
@@ -3737,12 +3750,17 @@ def spellWildHunt(caster):
   iWolf = gc.getInfoTypeForString('UNIT_WOLF')
   pPlayer = gc.getPlayer(caster.getOwner())
   py = PyPlayer(caster.getOwner())
-  for pUnit in py.getUnitList():
+  plist = py.getUnitList()
+  for pUnit in plist:
     if pUnit.baseCombatStr() > 0:
       newUnit = pPlayer.initUnit(iWolf, pUnit.getX(), pUnit.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+      newUnit.setExperience(pUnit.baseCombatStr(),-1)
       if pUnit.baseCombatStr() > 3:
         i = (pUnit.baseCombatStr() - 2) / 2
-        newUnit.setBaseCombatStr(2 + i)
+        newUnit.setBaseCombatStr(3 + i)
+        newUnit.setBaseCombatStrDefense(3 + i)
+        if i > 1:
+          newUnit.setHasPromotion(gc.getInfoTypeForString('PROMOTION_SKELETON_CREW'),True)
 
 def spellWonder(caster):
   iCount = CyGame().getSorenRandNum(3, "Wonder") + 3

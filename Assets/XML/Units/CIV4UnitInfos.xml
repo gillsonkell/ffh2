@@ -48879,6 +48879,10 @@
                     <bFreePromotion>1</bFreePromotion>
                 </FreePromotion>
                 <FreePromotion>
+                    <PromotionType>PROMOTION_NOBILITY</PromotionType>
+                    <bFreePromotion>1</bFreePromotion>
+                </FreePromotion>
+                <FreePromotion>
                     <PromotionType>PROMOTION_COMMANDER1</PromotionType>
                     <bFreePromotion>1</bFreePromotion>
                 </FreePromotion>

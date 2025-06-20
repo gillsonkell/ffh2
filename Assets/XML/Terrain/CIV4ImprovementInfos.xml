@@ -7067,14 +7067,11 @@
         </ImprovementInfo>
         <ImprovementInfo>
             <Type>IMPROVEMENT_JUNGLE_FARM</Type>
-            <Description>Jungle Haunt</Description>
+            <Description>Hunting Grounds</Description>
             <Civilopedia></Civilopedia>
             <Help></Help>
             <ArtDefineTag>ART_DEF_IMPROVEMENT_CAMP</ArtDefineTag>
             <PrereqNatureYields>
-                <iYield>1</iYield>
-                <iYield>0</iYield>
-                <iYield>0</iYield>
             </PrereqNatureYields>
             <YieldChanges>
                 <iYieldChange>1</iYieldChange>
@@ -7086,7 +7083,7 @@
             <bFreshWaterMakesValid>0</bFreshWaterMakesValid>
             <bRiverSideMakesValid>0</bRiverSideMakesValid>
             <bNoFreshWater>0</bNoFreshWater>
-            <bRequiresFlatlands>1</bRequiresFlatlands>
+            <bRequiresFlatlands>0</bRequiresFlatlands>
             <bRequiresRiverSide>0</bRequiresRiverSide>
             <bRequiresIrrigation>0</bRequiresIrrigation>
             <bCarriesIrrigation>0</bCarriesIrrigation>
@@ -7109,10 +7106,6 @@
             <TerrainMakesValids>
             </TerrainMakesValids>
             <FeatureMakesValids>
-                <FeatureMakesValid>
-                    <FeatureType>FEATURE_JUNGLE</FeatureType>
-                    <bMakesValid>1</bMakesValid>
-                </FeatureMakesValid>
             </FeatureMakesValids>
             <ImprovementPillage></ImprovementPillage>
             <ImprovementUpgrade></ImprovementUpgrade>
@@ -7155,14 +7148,14 @@
             <bGraphicalOnly>0</bGraphicalOnly>
             <bRequiresPeak>0</bRequiresPeak>
             <bUnique>0</bUnique>
-            <iAppearanceProbability>250</iAppearanceProbability>
+            <iAppearanceProbability>0</iAppearanceProbability>
             <iHealRateChange>0</iHealRateChange>
             <iRange>0</iRange>
             <iRangeDefenseModifier>0</iRangeDefenseModifier>
             <iVisibilityChange>0</iVisibilityChange>
             <BonusConvert>NONE</BonusConvert>
             <FeatureUpgrade>NONE</FeatureUpgrade>
-            <PrereqCivilization>CIVILIZATION_CLAN_OF_EMBERS</PrereqCivilization>
+            <PrereqCivilization>NONE</PrereqCivilization>
             <PythonAtRange></PythonAtRange>
             <PythonOnMove></PythonOnMove>
             <SpawnUnitType>NONE</SpawnUnitType>

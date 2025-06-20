@@ -4155,10 +4155,16 @@ class CustomFunctions:
 
         ## Check for Jungle Haunt Expiration
         if pPlot.getImprovementType() == gc.getInfoTypeForString('IMPROVEMENT_JUNGLE_FARM'): 
-          if pPlayer.getCivilizationType() != gc.getInfoTypeForString('CIVILIZATION_CLAN_OF_EMBERS') or pPlot.getFeatureType() != iJungle:
-            if CyGame().getSorenRandNum(100, "Haunt Expiration") < 5 or pPlot.getFeatureType() != iJungle:
+          bValidCiv = False
+          bValidTerrain = False  
+          if pPlayer.getCivilizationType() == gc.getInfoTypeForString('CIVILIZATION_CLAN_OF_EMBERS') or pPlayer.getCivilizationType() == gc.getInfoTypeForString('CIVILIZATION_ILLIANS') or pPlayer.getCivilizationType() == gc.getInfoTypeForString('CIVILIZATION_DOVIELLO'):
+            bValidCiv = True
+          if pPlot.getFeatureType() == iJungle or pPlot.getTerrainType() == gc.getInfoTypeForString('TERRAIN_SNOW') or pPlot.getTerrainType() == gc.getInfoTypeForString('TERRAIN_TUNDRA'):
+            bValidTerrain = True
+          if bValidCiv == False or bValidTerrain == False:  
+            if CyGame().getSorenRandNum(100, "Haunt Expiration") < 5 or bValidTerrain == False:
               pPlot.setImprovementType(-1)
-              CyInterface().addMessage(pPlot.getOwner(),false,25,'A jungle haunt is overtaken by the jungle...','AS2D_CHARM_PERSON',1,'Art/Interface/Buttons/Spells/Ressurection.dds',ColorTypes(7),pPlot.getX(),pPlot.getY(),True,True)
+              CyInterface().addMessage(pPlot.getOwner(),false,25,'Hunting grounds fall into ruin...','AS2D_CHARM_PERSON',1,'Art/Interface/Buttons/Spells/Ressurection.dds',ColorTypes(7),pPlot.getX(),pPlot.getY(),True,True)
 
         if pPlayer.getCivilizationType() == iInfernal:
           pPlot.changePlotCounter(100)
