@@ -3370,7 +3370,7 @@ class CustomFunctions:
           pUnit.setUnitAIType(UnitAITypes.UNITAI_ATTACK)
           
         ## Recruits become permanent (from temporary workers)
-        if pUnit.getDuration() > 0 and not pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_ILLUSION')) and ( pUnit.getUnitClassType() == gc.getInfoTypeForString('UNITCLASS_RECRUIT') or pUnit.getUnitClassType() == gc.getInfoTypeForString('UNITCLASS_WARRIOR') or pUnit.getUnitClassType() == gc.getInfoTypeForString('UNITCLASS_AXEMAN') ):
+        if pUnit.getDuration() > 0 and not pUnit.isHasPromotion(gc.getInfoTypeForString('PROMOTION_ILLUSION')) and ( pUnit.getUnitClassType() == gc.getInfoTypeForString('UNITCLASS_RECRUIT') or pUnit.getUnitClassType() == gc.getInfoTypeForString('UNITCLASS_WARRIOR') or pUnit.getUnitClassType() == gc.getInfoTypeForString('UNITCLASS_AXEMAN') or pUnit.getUnitClassType() == gc.getInfoTypeForString('UNITCLASS_CHAMPION') or pUnit.getUnitClassType() == gc.getInfoTypeForString('UNITCLASS_BERSERKER') or pUnit.getUnitClassType() == gc.getInfoTypeForString('UNITCLASS_PHALANX') or pUnit.getUnitClassType() == gc.getInfoTypeForString('UNITCLASS_IMMORTAL') ):
           pUnit.setDuration(0)
 
         ## If enemy occupied, do not create units here automatically
